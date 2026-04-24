@@ -1,0 +1,40 @@
+OG IMAGE INSTRUCTIONS — aicostcalculator.dev
+=============================================
+File name:   og-image.png
+Dimensions:  1200 x 630 px
+Format:      PNG
+
+BACKGROUND:
+- Solid colour: #09090b (very dark near-black)
+- Optional: subtle dot grid pattern in #00e5a0 at 5% opacity
+
+TOP-LEFT BADGE (small):
+- Text: "UPDATED APRIL 2026"
+- Font: monospace (Courier or similar)
+- Colour: #00e5a0 (bright green)
+- Size: ~18px
+
+MAIN HEADLINE (large, centred or left-aligned):
+- Line 1: "AI API Cost Calculator"
+- Line 2: (smaller) "Compare OpenAI · Claude · Gemini · Mistral"
+- Font: bold, clean sans-serif or monospace
+- Colour: #e4e4f0 (off-white)
+- Headline size: ~64px
+- Subline size: ~28px
+
+ACCENT:
+- Underline or highlight the word "Calculator" in #00e5a0
+
+BOTTOM ROW (small, spaced across width):
+- "15+ Models" | "Real-Time Pricing" | "Free · No Signup"
+- Font: monospace
+- Colour: #636375 (grey)
+
+BOTTOM-RIGHT:
+- URL: aicostcalculator.dev
+- Colour: #3b82f6 (blue)
+- Font: monospace, ~20px
+
+CANVA TIP:
+Create at 1200x630, export as PNG, name it og-image.png,
+and place it in the root of your GitHub repo alongside index.html
