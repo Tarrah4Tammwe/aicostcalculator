@@ -43,22 +43,22 @@ const nextConfig = {
   // Redirects for www/non-www consistency and HTTPS enforcement
   async redirects() {
     return [
-      // Redirect www to non-www
+      // Redirect non-www to www
       {
         source: '/:path*',
-        destination: 'https://aicostcalculator.dev/:path*',
+        destination: 'https://www.aicostcalculator.dev/:path*',
         permanent: true,
         has: [
           {
             type: 'host',
-            value: 'www.aicostcalculator.dev'
+            value: 'aicostcalculator.dev'
           }
         ]
       },
-      // Force HTTPS
+      // Redirect www to www HTTPS (force HTTPS)
       {
         source: '/:path*',
-        destination: 'https://aicostcalculator.dev/:path*',
+        destination: 'https://www.aicostcalculator.dev/:path*',
         permanent: true,
         has: [
           {
