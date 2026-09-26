@@ -1,24 +1,24 @@
 {
   "name": "AI Cost Calculator",
-  "short_name": "AI Calc",
-  "description": "Calculate the true cost of AI implementation for your business",
+  "short_name": "AI Cost",
+  "description": "Estimate monthly large language model API spend from published list prices.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0f172a",
+  "background_color": "#f3efe6",
+  "theme_color": "#1c1915",
   "scope": "/",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/x-icon"
-    }
-  ],
-  "screenshots": [
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
     {
-      "src": "/og-image.png",
-      "sizes": "1200x630",
-      "type": "image/png"
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }

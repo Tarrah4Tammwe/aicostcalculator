@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLM API Rate Card, September 2026 — OpenAI, Claude, Gemini, Grok</title>
+<meta name="description" content="Published list prices per million tokens for GPT-6, Claude, Gemini, Grok, and DeepSeek, checked 26 September 2026, with batch and long-context notes.">
+<link rel="canonical" href="https://aicostcalculator.dev/pricing/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="AI Cost Calculator">
+<meta name="theme-color" content="#1c1915">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Cost Calculator">
+<meta property="og:title" content="LLM API Rate Card, September 2026">
+<meta property="og:description" content="Input, cached input, and output prices for 15 current models, with the provider page for each rate.">
+<meta property="og:url" content="https://aicostcalculator.dev/pricing/">
+<meta property="og:image" content="https://aicostcalculator.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LLM API Rate Card, September 2026">
+<meta name="twitter:description" content="List prices for GPT-6, Claude, Gemini, Grok, and DeepSeek.">
+<meta name="twitter:image" content="https://aicostcalculator.dev/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8935274984783226" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LLM API rate card, September 2026",
+  "dateModified": "2026-09-26",
+  "datePublished": "2026-04-23",
+  "author": { "@type": "Organization", "name": "AI Cost Calculator", "url": "https://aicostcalculator.dev/" },
+  "publisher": { "@type": "Organization", "name": "AI Cost Calculator", "url": "https://aicostcalculator.dev/", "logo": { "@type": "ImageObject", "url": "https://aicostcalculator.dev/apple-touch-icon.png" } },
+  "mainEntityOfPage": "https://aicostcalculator.dev/pricing/",
+  "description": "Standard list prices per million tokens for fifteen language-model APIs, checked against provider documentation on 26 September 2026."
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">AI Cost Calculator</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Calculator</a>
+      <a href="/pricing/" aria-current="page">Rate card</a>
+      <a href="/guide/">Guide</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+<main id="content" class="wrap prose">
+  <p class="crumbs"><a href="/">Home</a> / Rate card</p>
+  <p class="eyebrow">Checked <time datetime="2026-09-26">26 September 2026</time></p>
+  <h1 class="page-title">The rate card behind the calculator.</h1>
+  <p>Every figure is US dollars per million tokens on the provider's standard text tier. "Cached" means a cache read, not a cache write. Batch, where a provider publishes it, is half of the row. Use the <a href="/">calculator</a> when you want those rates applied to a monthly volume.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Standard API list prices per million tokens as of 26 September 2026</caption>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Provider</th>
+          <th class="num">Input</th>
+          <th class="num">Cached</th>
+          <th class="num">Output</th>
+          <th class="num">Batch in / out</th>
+          <th>Context</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>GPT-6 Luna</td><td>OpenAI</td><td class="num">$0.10</td><td class="num">$0.01</td><td class="num">$0.50</td><td class="num">$0.05 / $0.25</td><td>1M, higher past 272K</td></tr>
+        <tr><td>GPT-6 Sol</td><td>OpenAI</td><td class="num">$2.00</td><td class="num">$0.20</td><td class="num">$10.00</td><td class="num">$1.00 / $5.00</td><td>1M, higher past 272K</td></tr>
+        <tr><td>GPT-6 Astra</td><td>OpenAI</td><td class="num">$10.00</td><td class="num">$1.00</td><td class="num">$50.00</td><td class="num">$5.00 / $25.00</td><td>1M, higher past 272K</td></tr>
+        <tr><td>Claude Haiku 4.5</td><td>Anthropic</td><td class="num">$1.00</td><td class="num">$0.10</td><td class="num">$5.00</td><td class="num">$0.50 / $2.50</td><td>200K, one rate</td></tr>
+        <tr><td>Claude Sonnet 5</td><td>Anthropic</td><td class="num">$2.00</td><td class="num">$0.20</td><td class="num">$10.00</td><td class="num">$1.00 / $5.00</td><td>1M, one rate</td></tr>
+        <tr><td>Claude Opus 5.5</td><td>Anthropic</td><td class="num">$4.00</td><td class="num">$0.20</td><td class="num">$20.00</td><td class="num">$2.00 / $10.00</td><td>1M, one rate</td></tr>
+        <tr><td>Claude Fable 5.1</td><td>Anthropic</td><td class="num">$10.00</td><td class="num">$0.25</td><td class="num">$50.00</td><td class="num">$5.00 / $25.00</td><td>1M, one rate</td></tr>
+        <tr><td>Gemini 3.1 Flash-Lite</td><td>Google</td><td class="num">$0.25</td><td class="num">$0.025</td><td class="num">$1.50</td><td class="num">$0.125 / $0.75</td><td>1M text rate</td></tr>
+        <tr><td>Gemini 3.5 Flash</td><td>Google</td><td class="num">$1.50</td><td class="num">$0.15</td><td class="num">$9.00</td><td class="num">$0.75 / $4.50</td><td>1M, one rate</td></tr>
+        <tr><td>Gemini 3.1 Pro</td><td>Google</td><td class="num">$2.00</td><td class="num">$0.20</td><td class="num">$12.00</td><td class="num">$1.00 / $6.00</td><td>1M, higher past 200K</td></tr>
+        <tr><td>Grok 4.3</td><td>xAI</td><td class="num">$1.25</td><td class="num">$0.20</td><td class="num">$2.50</td><td class="num">same</td><td>1M, higher past 200K</td></tr>
+        <tr><td>Grok 4.6</td><td>xAI</td><td class="num">$2.00</td><td class="num">$0.50</td><td class="num">$6.00</td><td class="num">same</td><td>500K, higher past 200K</td></tr>
+        <tr><td>Grok Build 0.1</td><td>xAI</td><td class="num">$1.00</td><td class="num">$0.20</td><td class="num">$2.00</td><td class="num">same</td><td>256K, higher past 200K</td></tr>
+        <tr><td>DeepSeek V4.1 Flash</td><td>DeepSeek</td><td class="num">$0.30</td><td class="num">$0.006</td><td class="num">$1.20</td><td class="num">off-peak is half</td><td>1M, peak rate</td></tr>
+        <tr><td>DeepSeek V4 Pro</td><td>DeepSeek</td><td class="num">$1.32</td><td class="num">$0.044</td><td class="num">$3.96</td><td class="num">off-peak is half</td><td>1M, peak rate</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Long-context rates</h2>
+  <p>These providers reprice the entire request once the prompt crosses the threshold. The calculator's long-context box switches to this column.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Model</th><th>Threshold</th><th class="num">Input</th><th class="num">Cached</th><th class="num">Output</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>GPT-6 Luna</td><td>Over 272K input</td><td class="num">$0.20</td><td class="num">$0.02</td><td class="num">$0.75</td></tr>
+        <tr><td>GPT-6 Sol</td><td>Over 272K input</td><td class="num">$4.00</td><td class="num">$0.40</td><td class="num">$15.00</td></tr>
+        <tr><td>GPT-6 Astra</td><td>Over 272K input</td><td class="num">$20.00</td><td class="num">$2.00</td><td class="num">$75.00</td></tr>
+        <tr><td>Gemini 3.1 Pro</td><td>Over 200K prompt tokens</td><td class="num">$4.00</td><td class="num">$0.40</td><td class="num">$18.00</td></tr>
+        <tr><td>Grok 4.3</td><td>200K prompt tokens or more</td><td class="num">$2.50</td><td class="num">$0.40</td><td class="num">$5.00</td></tr>
+        <tr><td>Grok 4.6</td><td>200K prompt tokens or more</td><td class="num">$4.00</td><td class="num">$1.00</td><td class="num">$12.00</td></tr>
+        <tr><td>Grok Build 0.1</td><td>200K prompt tokens or more</td><td class="num">$2.00</td><td class="num">$0.40</td><td class="num">$4.00</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Claude Haiku 4.5, Sonnet 5, Opus 5.5, and Fable 5.1 keep the standard rate across the published window. Gemini Flash and Flash-Lite do the same. DeepSeek's published table has one token price per peak or off-peak window.</p>
+
+  <h2>How to read a row</h2>
+  <p>Input is uncached text. Cached is a later read of a prefix the provider already stored. Output is generated text. On Gemini, the published output price includes thinking tokens, so a short visible answer can still be a long billed output.</p>
+  <p>OpenAI's batch and flex tiers are half of standard, including the long-context column. Anthropic's batch API is half of the base token price. Google's batch tier on the three Gemini rows is half of standard. xAI's pricing page does not list a batch price for Grok 4.3, Grok 4.6, or Grok Build 0.1.</p>
+  <p>DeepSeek's peak hours are 01:00–04:00 and 06:00–10:00 UTC, Monday through Friday, excluding Chinese public holidays. Every other hour, including weekends, is off-peak at half the peak rate. The table shows peak, which is the higher bill.</p>
+
+  <h2>Where each rate comes from</h2>
+  <ul>
+    <li><a href="https://developers.openai.com/api/docs/pricing">OpenAI API pricing</a> for GPT-6 Luna, Sol, and Astra, including cached input, cache writes, batch, and the long-context column.</li>
+    <li><a href="https://www.anthropic.com/claude-opus-5-5">Claude Opus 5.5</a> for the $4 / $0.20 / $20 rates and the $5 cache-write price.</li>
+    <li><a href="https://www.anthropic.com/news/claude-sonnet-5">Claude Sonnet 5</a> for the permanent $2 / $10 price.</li>
+    <li><a href="https://docs.anthropic.com/en/docs/about-claude/models/overview">Anthropic models overview</a> for Haiku 4.5 at $1 / $5, Fable 5.1 at $10 / $50, the 50% batch discount, and cache reads at 10% of input (2.5% on Fable 5.1).</li>
+    <li><a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a> for Gemini 3.5 Flash, 3.1 Flash-Lite, and 3.1 Pro, including batch and context caching.</li>
+    <li><a href="https://docs.x.ai/developers/pricing">xAI API pricing</a> for Grok 4.6, Grok 4.3, and Grok Build 0.1 under and over 200K prompt tokens.</li>
+    <li><a href="https://api-docs.deepseek.com/quick_start/pricing">DeepSeek API pricing</a> for deepseek-flash (V4.1) and deepseek-v4-pro, peak and off-peak.</li>
+  </ul>
+  <p>Claude Opus 5 is still listed by Anthropic at $5 input and $25 output. Opus 5.5 replaced it as the current Opus price, so the older row is not in the calculator. GPT-4o, GPT-4.1, and the April 2026 card this site used to show are retired from the estimator for the same reason.</p>
+
+  <h2>A useful way to compare</h2>
+  <p>Input prices cluster. GPT-6 Sol, Claude Sonnet 5, Gemini 3.1 Pro, and Grok 4.6 all sit at $2 per million input tokens on the short-context tier. Output is where they split: Grok 4.6 at $6, Sol and Sonnet at $10, Gemini 3.1 Pro at $12. A workload that writes a lot of text should be ranked on output, then checked again once cache hits are real. The <a href="/guide/">pricing guide</a> shows that split with one worked example.</p>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8935274984783226" data-ad-slot="1271218242" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <strong>AI Cost Calculator</strong>
+      <p>Independent estimates of large language model API spend. Prices checked 26 September 2026 against provider documentation.</p>
+    </div>
+    <div>
+      <p class="footer-label">Read</p>
+      <div class="footer-links">
+        <a href="/pricing/">Rate card</a>
+        <a href="/guide/">Pricing guide</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Site</p>
+      <div class="footer-links">
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="legal">Estimates only. Confirm the rate on the provider's pricing page before you budget. © 2026 AI Cost Calculator.</p></div>
+</footer>
+</body>
+</html>

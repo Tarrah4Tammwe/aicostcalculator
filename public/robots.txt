@@ -1,6 +1,4 @@
-# Allow Google to crawl the entire site
 User-agent: *
 Allow: /
 
-# Specify sitemap location
 Sitemap: https://aicostcalculator.dev/sitemap.xml
