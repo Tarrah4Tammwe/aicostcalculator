@@ -1,1025 +1,889 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- ═══════════════════════════════════════════════
-     SEO: PRIMARY META
-═══════════════════════════════════════════════ -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111310">
+  <title>Wayfinder — Life Quest Planner</title>
+  <meta name="description" content="An offline life quest planner that turns everyday progress into a balanced, sustainable adventure.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 
-<title>AI API Cost Calculator 2026 — Compare OpenAI, Claude, Gemini Pricing</title>
-<meta name="description" content="Free AI API cost calculator. Instantly estimate and compare LLM pricing across OpenAI GPT-4o, Anthropic Claude, Google Gemini, Mistral & DeepSeek. Calculate monthly spend in seconds.">
-<meta name="keywords" content="AI API cost calculator, OpenAI pricing calculator, Claude API cost, Gemini API pricing, LLM cost estimator, ChatGPT API calculator, token cost calculator, AI API comparison 2026">
-<meta name="author" content="AI Cost Calculator">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://aicostcalculator.dev/">
-
-<!-- ═══════════════════════════════════════════════
-     SEO: OPEN GRAPH
-═══════════════════════════════════════════════ -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aicostcalculator.dev/">
-<meta property="og:title" content="AI API Cost Calculator 2026 — Compare OpenAI, Claude, Gemini Pricing">
-<meta property="og:description" content="Free tool. Instantly estimate AI API costs across 15+ models. Updated April 2026. Compare OpenAI, Anthropic, Google, Mistral, DeepSeek pricing in seconds.">
-<meta property="og:image" content="https://aicostcalculator.dev/og-image.png">
-<meta property="og:site_name" content="AI Cost Calculator">
-
-<!-- ═══════════════════════════════════════════════
-     SEO: SCHEMA MARKUP
-═══════════════════════════════════════════════ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebApplication",
-      "@id": "https://aicostcalculator.dev/#app",
-      "name": "AI Cost Calculator",
-      "description": "Free online calculator to estimate and compare AI API costs across OpenAI, Anthropic Claude, Google Gemini, Mistral, DeepSeek and more.",
-      "url": "https://aicostcalculator.dev/",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "Any",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "featureList": ["Compare 15+ AI models","Real-time cost estimation","Batch pricing support","Prompt caching calculator","Monthly and annual projections"],
-      "dateModified": "2026-04-23",
-      "inLanguage": "en"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://aicostcalculator.dev/#site",
-      "name": "AI Cost Calculator",
-      "url": "https://aicostcalculator.dev/"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://aicostcalculator.dev/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How much does the OpenAI GPT-4o API cost?",
-          "acceptedAnswer": { "@type": "Answer", "text": "GPT-4o costs $2.50 per million input tokens and $10.00 per million output tokens as of April 2026. With prompt caching, input tokens drop to $1.25/M." }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does Claude API cost?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Claude Sonnet 4 costs $3.00 per million input tokens and $15.00 per million output tokens. Claude Haiku 3.5 is cheaper at $0.80 input / $4.00 output per million tokens." }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the cheapest AI API in 2026?",
-          "acceptedAnswer": { "@type": "Answer", "text": "As of April 2026, the cheapest capable AI APIs include Google Gemini Flash Lite ($0.075/$0.30 per million tokens), Mistral Small 3.1 ($0.10/$0.30), and DeepSeek V3 ($0.27/$1.10)." }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I calculate AI API costs?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Multiply your monthly request count by average input tokens, divide by 1,000,000, then multiply by the input price per million tokens. Repeat for output tokens. Sum both to get your monthly cost." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does OpenAI offer batch API discounts?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. OpenAI's Batch API offers 50% off standard pricing. Anthropic also offers 50% batch discounts. Our calculator applies these automatically in Batch Mode." }
-        },
-        {
-          "@type": "Question",
-          "name": "What is prompt caching and how does it reduce costs?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Prompt caching stores repeated context server-side. Cached tokens are re-used instead of re-processed, costing 50-90% less than standard input tokens depending on the provider." }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aicostcalculator.dev/" }]
+    :root {
+      --ink: #171a15;
+      --muted: #6e7368;
+      --paper: #f3f0e8;
+      --card: #fbfaf5;
+      --line: #dedbcf;
+      --green: #597a4a;
+      --green-deep: #35552e;
+      --green-soft: #e2eadc;
+      --gold: #d7a74b;
+      --gold-soft: #f5e9ca;
+      --terracotta: #be7255;
+      --blue: #68869a;
+      --purple: #8b7495;
+      --shadow: 0 16px 50px rgba(44, 50, 37, .09);
+      --radius: 20px;
     }
-  ]
-}
-</script>
 
-<!-- ═══════════════════════════════════════════════
-     MONETISATION: GOOGLE ADSENSE
-═══════════════════════════════════════════════ -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8935274984783226" crossorigin="anonymous"></script>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 2%, rgba(210, 183, 111, .15), transparent 24rem),
+        radial-gradient(circle at 90% 12%, rgba(100, 134, 82, .12), transparent 28rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-<!-- PERFORMANCE -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    button, input, select { font: inherit; }
+    button { color: inherit; }
+    button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid rgba(89, 122, 74, .25);
+      outline-offset: 2px;
+    }
+    .hidden { display: none !important; }
 
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .app-shell { width: min(1440px, 100%); margin: 0 auto; padding: 26px 30px 56px; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; }
+    .brand-mark {
+      width: 41px; height: 41px; border-radius: 13px;
+      display: grid; place-items: center;
+      color: #f7f5ec;
+      background: var(--green-deep);
+      box-shadow: 0 7px 20px rgba(53, 85, 46, .24);
+    }
+    .brand-mark svg { width: 21px; height: 21px; }
+    .brand-copy strong {
+      display: block; font: 800 18px/1 "Manrope", sans-serif; letter-spacing: -.4px;
+    }
+    .brand-copy span { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
 
-:root {
-  --bg:       #09090b;
-  --surface:  #111116;
-  --surface2: #16161d;
-  --border:   #212128;
-  --border2:  #2c2c36;
-  --text:     #e4e4f0;
-  --muted:    #636375;
-  --dim:      #3a3a4a;
-  --green:    #00e5a0;
-  --blue:     #3b82f6;
-  --orange:   #f97316;
-  --yellow:   #fbbf24;
-  --mono:     'IBM Plex Mono', 'Courier New', monospace;
-  --sans:     'IBM Plex Sans', system-ui, sans-serif;
-}
+    .top-actions { display: flex; align-items: center; gap: 10px; }
+    .icon-btn, .ghost-btn, .primary-btn, .complete-btn, .filter-btn {
+      border: 0; cursor: pointer; transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+    .icon-btn:hover, .ghost-btn:hover, .primary-btn:hover, .complete-btn:hover { transform: translateY(-1px); }
+    .icon-btn {
+      width: 41px; height: 41px; display: grid; place-items: center; border-radius: 13px;
+      background: rgba(251, 250, 245, .75); border: 1px solid var(--line);
+    }
+    .icon-btn svg { width: 18px; height: 18px; }
+    .primary-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 43px; padding: 0 17px; border-radius: 13px;
+      background: var(--green-deep); color: #fff; font-weight: 700;
+      box-shadow: 0 8px 20px rgba(53, 85, 46, .2);
+    }
+    .primary-btn svg { width: 17px; height: 17px; }
+    .ghost-btn {
+      min-height: 40px; padding: 0 14px; border-radius: 12px;
+      background: transparent; border: 1px solid var(--line); font-weight: 600;
+    }
 
-html { scroll-behavior: smooth; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 26px; align-items: start; }
+    main { min-width: 0; }
+    aside { position: sticky; top: 22px; display: grid; gap: 17px; }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
+    .hero {
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1.45fr .8fr; min-height: 232px;
+      border-radius: 26px; padding: 34px 36px;
+      color: #f8f6ef; background: #263d28;
+      box-shadow: var(--shadow);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg, rgba(21, 42, 25, .2), rgba(21, 42, 25, .03)),
+        repeating-radial-gradient(ellipse at 105% 160%, transparent 0 33px, rgba(255,255,255,.035) 34px 35px);
+      pointer-events: none;
+    }
+    .hero-copy { position: relative; z-index: 1; align-self: center; }
+    .eyebrow {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 13px;
+      color: #c9d9c4; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 20px; height: 1px; background: currentColor; }
+    .hero h1 { max-width: 640px; margin: 0; font: 700 clamp(30px, 4vw, 48px)/1.08 "Manrope", sans-serif; letter-spacing: -1.6px; }
+    .hero p { max-width: 550px; margin: 15px 0 0; color: #cad4c7; line-height: 1.55; font-size: 14px; }
+    .hero-art { position: relative; z-index: 1; min-height: 160px; }
+    .sun { position: absolute; right: 13%; top: 8%; width: 88px; height: 88px; border-radius: 50%; background: #d5ae61; opacity: .95; }
+    .mountain { position: absolute; right: -35px; bottom: -35px; width: 310px; height: 170px; background: #456347; clip-path: polygon(0 100%, 30% 35%, 48% 68%, 67% 18%, 100% 100%); }
+    .mountain.back { right: 105px; bottom: -38px; background: #355338; opacity: .84; transform: scale(.75); transform-origin: bottom; }
+    .path { position: absolute; right: 67px; bottom: -40px; width: 34px; height: 150px; background: #c5a668; clip-path: polygon(43% 0, 60% 0, 100% 100%, 0 100%); transform: rotate(-17deg); opacity: .72; }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(0,229,160,0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-  z-index: 0;
-}
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 30px 2px 16px; }
+    .section-title h2 { margin: 0; font: 800 20px/1.2 "Manrope", sans-serif; letter-spacing: -.45px; }
+    .section-title p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+    .date-pill {
+      flex: none; padding: 8px 12px; border: 1px solid var(--line); border-radius: 30px;
+      color: var(--muted); background: rgba(251,250,245,.55); font-size: 12px; font-weight: 600;
+    }
 
-.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+    .bounty-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .bounty-card {
+      position: relative; overflow: hidden; min-height: 230px; padding: 21px;
+      display: flex; flex-direction: column;
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(44,50,37,.055);
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .bounty-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .bounty-card.done { opacity: .7; background: #f0f1e9; }
+    .bounty-card.done h3 { text-decoration: line-through; text-decoration-thickness: 1px; }
+    .bounty-number {
+      position: absolute; right: 14px; top: 5px;
+      font: 800 64px/1 "Manrope", sans-serif; color: rgba(43,57,38,.045);
+    }
+    .quest-icon {
+      width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--icon-soft); color: var(--icon); font-size: 18px;
+    }
+    .bounty-card h3 { position: relative; margin: 17px 0 7px; font: 700 16px/1.3 "Manrope", sans-serif; }
+    .quest-meta { display: flex; flex-wrap: wrap; gap: 7px; color: var(--muted); font-size: 11px; }
+    .quest-meta span { display: inline-flex; align-items: center; gap: 4px; }
+    .xp-preview { margin: auto 0 14px; color: var(--green-deep); font: 700 12px "Manrope", sans-serif; }
+    .complete-btn {
+      width: 100%; min-height: 38px; border-radius: 11px;
+      background: var(--green-soft); color: var(--green-deep); font-size: 12px; font-weight: 700;
+    }
+    .complete-btn.done { background: transparent; border: 1px solid var(--line); color: var(--muted); cursor: default; }
+    .board-complete {
+      display: none; align-items: center; gap: 12px; padding: 13px 16px; margin-top: 13px;
+      border-radius: 14px; background: var(--gold-soft); color: #73581f; font-size: 13px; font-weight: 600;
+    }
+    .board-complete.show { display: flex; animation: rise .35s ease both; }
 
-/* HEADER */
-header { padding: 44px 0 28px; border-bottom: 1px solid var(--border); }
+    .quest-panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .quest-toolbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 15px 18px; border-bottom: 1px solid var(--line);
+    }
+    .filters { display: flex; gap: 5px; }
+    .filter-btn { padding: 7px 11px; border-radius: 9px; background: transparent; color: var(--muted); font-size: 12px; font-weight: 600; }
+    .filter-btn.active { background: var(--green-soft); color: var(--green-deep); }
+    .quest-count { color: var(--muted); font-size: 11px; }
+    .quest-list { min-height: 140px; }
+    .quest-row {
+      display: grid; grid-template-columns: 36px minmax(0,1fr) auto auto; gap: 12px; align-items: center;
+      padding: 14px 18px; border-bottom: 1px solid #e7e4da;
+    }
+    .quest-row:last-child { border-bottom: 0; }
+    .quest-row.is-completed .quest-row-title { text-decoration: line-through; color: var(--muted); }
+    .quest-row .quest-icon { width: 34px; height: 34px; border-radius: 10px; font-size: 15px; }
+    .quest-row-title { font-weight: 600; font-size: 13px; }
+    .quest-row-sub { margin-top: 3px; color: var(--muted); font-size: 10px; }
+    .difficulty { padding: 5px 8px; border-radius: 20px; background: #eeeae0; color: var(--muted); font-size: 10px; text-transform: capitalize; }
+    .row-action {
+      min-width: 78px; padding: 7px 10px; border: 0; border-radius: 9px; cursor: pointer;
+      background: var(--green-soft); color: var(--green-deep); font-size: 10px; font-weight: 700;
+    }
+    .row-action.abandon { min-width: 30px; background: transparent; color: #a29d91; font-size: 17px; }
+    .empty-state { padding: 36px; text-align: center; color: var(--muted); font-size: 13px; }
 
-.live-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--green);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
+    .side-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 7px 22px rgba(44,50,37,.045); }
+    .profile-card { overflow: hidden; }
+    .profile-top { position: relative; padding: 22px; color: #f9f8f2; background: var(--green-deep); }
+    .profile-top::after { content: "✦"; position: absolute; right: 19px; top: 17px; color: rgba(255,255,255,.18); font-size: 35px; }
+    .level-line { display: flex; align-items: center; gap: 13px; }
+    .level-orb {
+      width: 53px; height: 53px; display: grid; place-items: center; border-radius: 50%;
+      border: 2px solid #ddc077; background: #42663b; color: #fff;
+      font: 800 21px "Manrope", sans-serif; box-shadow: inset 0 0 0 4px rgba(255,255,255,.05);
+    }
+    .level-copy small { display: block; color: #b8c8b3; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .level-copy strong { display: block; margin-top: 4px; font: 700 17px "Manrope", sans-serif; }
+    .xp-line { display: flex; justify-content: space-between; margin: 18px 0 7px; color: #d0dbcd; font-size: 10px; }
+    .progress { height: 7px; overflow: hidden; background: rgba(0,0,0,.25); border-radius: 20px; }
+    .progress > span { display: block; height: 100%; border-radius: inherit; background: #ddc077; transition: width .55s cubic-bezier(.2,.8,.2,1); }
+    .stats-row { display: grid; grid-template-columns: repeat(3,1fr); padding: 15px 8px; }
+    .mini-stat { text-align: center; border-right: 1px solid var(--line); }
+    .mini-stat:last-child { border-right: 0; }
+    .mini-stat strong { display: block; font: 800 15px "Manrope", sans-serif; }
+    .mini-stat span { color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }
 
-.live-dot {
-  width: 6px; height: 6px;
-  background: var(--green);
-  border-radius: 50%;
-  animation: blink 2s ease infinite;
-}
+    .side-card-body { padding: 19px 20px; }
+    .side-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .side-heading h3 { margin: 0; font: 800 14px "Manrope", sans-serif; }
+    .side-heading span { color: var(--muted); font-size: 10px; }
+    .attribute { margin-bottom: 15px; }
+    .attribute:last-child { margin-bottom: 0; }
+    .attribute-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; font-size: 11px; }
+    .attribute-name { display: flex; align-items: center; gap: 7px; font-weight: 600; }
+    .attribute-name i { width: 7px; height: 7px; border-radius: 50%; background: var(--attr); }
+    .attribute-level { color: var(--muted); font-size: 9px; }
+    .attribute .progress { height: 5px; background: #e8e5dc; }
+    .attribute .progress span { background: var(--attr); }
 
-@keyframes blink {
-  0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(0,229,160,0.4); }
-  50% { opacity:0.5; box-shadow: 0 0 0 4px rgba(0,229,160,0); }
-}
+    .buff { display: flex; gap: 11px; align-items: center; padding: 11px 0; border-bottom: 1px solid #e7e4da; }
+    .buff:last-child { border-bottom: 0; padding-bottom: 0; }
+    .buff:first-of-type { padding-top: 0; }
+    .buff-icon { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 10px; background: var(--gold-soft); }
+    .buff strong { display: block; font-size: 11px; }
+    .buff span { display: block; margin-top: 2px; color: var(--muted); font-size: 9px; }
 
-h1 {
-  font-family: var(--mono);
-  font-size: clamp(20px, 3.8vw, 34px);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.15;
-  margin-bottom: 10px;
-}
+    .modal-wrap {
+      position: fixed; inset: 0; z-index: 50; padding: 20px; display: grid; place-items: center;
+      background: rgba(26,30,23,.48); backdrop-filter: blur(4px);
+    }
+    .modal {
+      width: min(500px, 100%); max-height: calc(100vh - 40px); overflow: auto;
+      background: var(--card); border: 1px solid rgba(255,255,255,.5); border-radius: 24px; box-shadow: 0 30px 90px rgba(22,29,19,.24);
+      animation: modalIn .25s ease both;
+    }
+    .modal-head { display: flex; justify-content: space-between; align-items: start; padding: 24px 25px 14px; }
+    .modal-head h2 { margin: 0; font: 800 21px "Manrope", sans-serif; }
+    .modal-head p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+    .close-btn { border: 0; background: transparent; cursor: pointer; color: var(--muted); font-size: 24px; line-height: 1; }
+    .modal-body { padding: 8px 25px 25px; }
+    .field { margin-bottom: 17px; }
+    .field label { display: block; margin-bottom: 7px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .field input, .field select {
+      width: 100%; height: 46px; border: 1px solid var(--line); border-radius: 12px;
+      padding: 0 13px; color: var(--ink); background: #fffefa;
+    }
+    .two-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .difficulty-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .difficulty-card input { position: absolute; opacity: 0; pointer-events: none; }
+    .difficulty-card span {
+      display: block; padding: 11px 6px; text-align: center; border: 1px solid var(--line); border-radius: 11px;
+      cursor: pointer; font-size: 11px; font-weight: 600;
+    }
+    .difficulty-card input:checked + span { border-color: var(--green); background: var(--green-soft); color: var(--green-deep); }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 22px; }
 
-h1 em { color: var(--green); font-style: normal; }
+    .level-modal { text-align: center; padding: 36px 30px 30px; overflow: hidden; }
+    .level-rays { position: relative; width: 110px; height: 110px; margin: 0 auto 19px; display: grid; place-items: center; }
+    .level-rays::before {
+      content: ""; position: absolute; inset: -55px; border-radius: 50%;
+      background: repeating-conic-gradient(from 0deg, rgba(215,167,75,.18) 0deg 8deg, transparent 8deg 20deg);
+      animation: spin 15s linear infinite;
+    }
+    .level-rays .level-orb { position: relative; width: 82px; height: 82px; font-size: 30px; background: var(--green-deep); }
+    .level-modal h2 { margin: 0; font: 800 29px "Manrope", sans-serif; }
+    .level-modal p { margin: 10px auto 23px; max-width: 310px; color: var(--muted); font-size: 13px; line-height: 1.5; }
 
-.h1-sub {
-  font-size: 14px;
-  color: var(--muted);
-  max-width: 580px;
-  line-height: 1.6;
-}
+    .settings-menu {
+      position: absolute; right: 30px; top: 73px; z-index: 30; width: 205px;
+      padding: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
+    }
+    .settings-menu button, .settings-menu label {
+      width: 100%; display: flex; align-items: center; gap: 9px; padding: 10px 11px;
+      border: 0; border-radius: 9px; background: transparent; cursor: pointer; font-size: 12px; text-align: left;
+    }
+    .settings-menu button:hover, .settings-menu label:hover { background: var(--green-soft); }
+    .settings-menu .danger { color: #a44f3d; }
+    #importFile { display: none; }
+    .toast {
+      position: fixed; left: 50%; bottom: 26px; z-index: 80; transform: translate(-50%, 25px);
+      min-width: 260px; padding: 12px 16px; border-radius: 13px; background: #20281e; color: #fff;
+      box-shadow: 0 16px 40px rgba(0,0,0,.25); font-size: 12px; text-align: center;
+      opacity: 0; pointer-events: none; transition: .25s ease;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-.h1-sub strong { color: var(--text); font-weight: 500; }
+    @keyframes modalIn { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-.updated-pill {
-  display: inline-block;
-  margin-top: 12px;
-  font-family: var(--mono);
-  font-size: 10px;
-  background: rgba(0,229,160,0.08);
-  color: var(--green);
-  border: 1px solid rgba(0,229,160,0.2);
-  padding: 3px 10px;
-  border-radius: 20px;
-  letter-spacing: 0.06em;
-}
-
-/* AD SLOTS */
-.ad-slot { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; text-align: center; }
-.ad-slot-header { margin: 20px 0 16px; }
-.ad-slot-footer { margin: 32px 0 0; }
-.ad-slot-inline { margin: 24px 0; }
-.ad-label { font-family: var(--mono); font-size: 9px; color: var(--dim); letter-spacing: 0.1em; text-transform: uppercase; display: block; padding: 6px 0 2px; }
-
-/* MAIN GRID */
-.main-grid {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 20px;
-  padding: 24px 0 40px;
-  align-items: start;
-}
-
-@media (max-width: 720px) {
-  .main-grid { grid-template-columns: 1fr; }
-  .sticky-col { position: static !important; }
-}
-
-/* PANELS */
-.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.panel + .panel { margin-top: 16px; }
-
-.panel-head {
-  padding: 12px 18px;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.panel-label { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.panel-body { padding: 18px; }
-
-/* TABS */
-.tab-bar { display: flex; background: var(--surface2); border-bottom: 1px solid var(--border); }
-
-.tab-btn {
-  flex: 1;
-  padding: 11px 8px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.15s;
-  margin-bottom: -1px;
-}
-
-.tab-btn.on { color: var(--green); border-bottom-color: var(--green); }
-.tab-content { display: none; padding: 18px; }
-.tab-content.on { display: block; }
-
-/* FORM */
-.field { margin-bottom: 18px; }
-.field:last-child { margin-bottom: 0; }
-
-label {
-  display: block;
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--muted);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  margin-bottom: 7px;
-}
-
-label .note { font-size: 9px; color: var(--dim); text-transform: none; letter-spacing: 0; margin-left: 6px; }
-
-input[type=number], select {
-  width: 100%;
-  background: var(--bg);
-  border: 1px solid var(--border2);
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 13px;
-  padding: 9px 12px;
-  border-radius: 5px;
-  outline: none;
-  appearance: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-
-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23636375'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 32px;
-  cursor: pointer;
-}
-
-input[type=number]:focus, select:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(0,229,160,0.1);
-}
-
-.range-wrap { display: flex; align-items: center; gap: 12px; }
-
-input[type=range] {
-  flex: 1;
-  appearance: none;
-  height: 3px;
-  background: var(--border2);
-  border-radius: 2px;
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  outline: none;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 15px; height: 15px;
-  border-radius: 50%;
-  background: var(--green);
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,229,160,0.5);
-  transition: transform 0.1s;
-}
-
-input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
-
-.range-val { font-family: var(--mono); font-size: 12px; color: var(--green); min-width: 80px; text-align: right; white-space: nowrap; }
-
-/* MODEL GRID */
-.model-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
-
-.mc {
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  padding: 9px 11px;
-  cursor: pointer;
-  background: var(--bg);
-  transition: all 0.13s;
-  position: relative;
-}
-
-.mc:hover { border-color: var(--border2); }
-.mc.on { border-color: var(--green); background: rgba(0,229,160,0.04); }
-.mc.on::after { content: '✓'; position: absolute; top: 5px; right: 8px; font-size: 9px; color: var(--green); font-family: var(--mono); }
-.mc-name { font-family: var(--mono); font-size: 11px; color: var(--text); margin-bottom: 2px; font-weight: 500; }
-.mc-prov { font-size: 9px; color: var(--muted); }
-.mc-price { font-family: var(--mono); font-size: 9px; color: var(--blue); margin-top: 3px; }
-
-/* RESULTS */
-.sticky-col { position: sticky; top: 20px; }
-
-.cost-hero { text-align: center; padding: 22px 18px; border-bottom: 1px solid var(--border); }
-.cost-hero-label { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
-
-.cost-num {
-  font-family: var(--mono);
-  font-size: 44px;
-  font-weight: 300;
-  color: var(--green);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  transition: opacity 0.15s, transform 0.15s;
-}
-
-.cost-num.flash { opacity: 0.4; transform: scale(0.96); }
-.cost-period { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 5px; }
-
-.bk { padding: 14px 18px; border-bottom: 1px solid var(--border); }
-.bk-row { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; font-family: var(--mono); font-size: 11px; }
-.bk-k { color: var(--muted); }
-.bk-v { color: var(--text); }
-.bk-v.g { color: var(--green); }
-.bk-v.y { color: var(--yellow); }
-.bk-rule { height: 1px; background: var(--border); margin: 5px 0; }
-
-.save-banner {
-  display: none;
-  margin: 14px 18px;
-  padding: 10px 13px;
-  background: rgba(0,229,160,0.07);
-  border: 1px solid rgba(0,229,160,0.18);
-  border-radius: 5px;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--green);
-  line-height: 1.6;
-}
-
-.panel-footnote { padding: 11px 18px; font-size: 10px; color: var(--dim); line-height: 1.5; border-top: 1px solid var(--border); }
-
-/* COMPARISON TABLE */
-.cmp-row {
-  display: grid;
-  grid-template-columns: 1fr 56px auto;
-  gap: 10px;
-  align-items: center;
-  padding: 10px 18px;
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-  transition: background 0.1s;
-}
-
-.cmp-row:last-child { border-bottom: none; }
-.cmp-row:hover { background: var(--surface2); }
-.cmp-row.sel { background: rgba(0,229,160,0.04); }
-.cmp-name { font-family: var(--mono); font-size: 11px; font-weight: 500; }
-.cmp-prov { font-size: 10px; color: var(--muted); }
-.bar-track { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
-.bar-fill { height: 100%; border-radius: 2px; transition: width 0.4s ease; background: var(--blue); }
-.cmp-row.cheapest .bar-fill { background: var(--green); }
-.cmp-row.priciest .bar-fill { background: var(--orange); }
-.cmp-row.sel .bar-fill { background: var(--yellow); }
-.cmp-cost { font-family: var(--mono); font-size: 12px; font-weight: 500; text-align: right; }
-.cmp-row.cheapest .cmp-cost { color: var(--green); }
-.cmp-row.priciest .cmp-cost { color: var(--orange); }
-
-.badge { display: inline-block; font-family: var(--mono); font-size: 8px; letter-spacing: 0.06em; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; margin-left: 5px; vertical-align: middle; }
-.bg { background: rgba(0,229,160,0.15); color: var(--green); }
-.bo { background: rgba(249,115,22,0.15); color: var(--orange); }
-.bb { background: rgba(59,130,246,0.15); color: var(--blue); }
-
-/* AFFILIATE */
-.aff-section { margin: 32px 0; padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
-.aff-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-.aff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
-
-.aff-card {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 13px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg);
-  text-decoration: none;
-  transition: border-color 0.15s, background 0.15s;
-}
-
-.aff-card:hover { border-color: var(--border2); background: var(--surface2); }
-.aff-provider { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--text); }
-.aff-desc { font-size: 10px; color: var(--muted); line-height: 1.4; }
-.aff-cta { font-family: var(--mono); font-size: 10px; color: var(--blue); margin-top: 2px; }
-
-/* FAQ */
-.faq-section { margin: 40px 0; border-top: 1px solid var(--border); padding-top: 32px; }
-.faq-title { font-family: var(--mono); font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 24px; letter-spacing: -0.02em; }
-.faq-item { border: 1px solid var(--border); border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
-
-.faq-q {
-  width: 100%;
-  text-align: left;
-  padding: 14px 18px;
-  background: var(--surface);
-  border: none;
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  transition: background 0.13s;
-}
-
-.faq-q:hover { background: var(--surface2); }
-.faq-q span:last-child { font-family: var(--mono); font-size: 16px; color: var(--muted); flex-shrink: 0; transition: transform 0.2s; }
-.faq-q.open span:last-child { transform: rotate(45deg); color: var(--green); }
-.faq-a { display: none; padding: 14px 18px; font-size: 13px; color: var(--muted); line-height: 1.7; border-top: 1px solid var(--border); background: var(--bg); }
-.faq-a.open { display: block; }
-
-/* CONTENT */
-.content-section { margin: 40px 0; border-top: 1px solid var(--border); padding-top: 32px; }
-.content-section h2 { font-family: var(--mono); font-size: 18px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 14px; color: var(--text); }
-.content-section h3 { font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: 0.03em; color: var(--green); margin: 20px 0 8px; }
-.content-section p { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 12px; max-width: 740px; }
-.content-section strong { color: var(--text); font-weight: 500; }
-
-/* FOOTER */
-footer { border-top: 1px solid var(--border); padding: 24px 0 40px; margin-top: 40px; }
-
-.footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
-.footer-brand { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-.footer-note { font-size: 11px; color: var(--muted); max-width: 360px; line-height: 1.6; }
-.footer-links { display: flex; flex-direction: column; gap: 6px; }
-.footer-links a { font-family: var(--mono); font-size: 11px; color: var(--blue); text-decoration: none; }
-.footer-links a:hover { text-decoration: underline; }
-.disclaimer { margin-top: 20px; font-size: 10px; color: var(--dim); font-family: var(--mono); line-height: 1.6; }
-
-select option { background: #16161d; }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.fadein { animation: fadeUp 0.35s ease both; }
-</style>
+    @media (max-width: 1050px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; grid-template-columns: repeat(3,1fr); }
+      .profile-card { grid-column: span 1; }
+    }
+    @media (max-width: 780px) {
+      .app-shell { padding: 18px 16px 42px; }
+      .hero { grid-template-columns: 1fr; padding: 28px; }
+      .hero-art { position: absolute; inset: 0; opacity: .45; pointer-events: none; }
+      .hero-copy { max-width: 80%; }
+      .bounty-grid { grid-template-columns: 1fr; }
+      .bounty-card { min-height: 190px; }
+      aside { grid-template-columns: 1fr; }
+      .settings-menu { right: 16px; top: 64px; }
+    }
+    @media (max-width: 540px) {
+      .brand-copy span, .top-actions .icon-btn:first-child { display: none; }
+      .primary-btn .label { display: none; }
+      .primary-btn { width: 43px; padding: 0; }
+      .hero { min-height: 255px; padding: 25px 22px; }
+      .hero-copy { max-width: 100%; }
+      .hero h1 { font-size: 31px; letter-spacing: -1px; }
+      .quest-toolbar { align-items: flex-start; flex-direction: column; }
+      .quest-row { grid-template-columns: 34px minmax(0,1fr) auto; }
+      .quest-row .difficulty { display: none; }
+      .two-fields { grid-template-columns: 1fr; gap: 0; }
+      .section-head { align-items: start; }
+      .date-pill { display: none; }
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m15.7 8.3-2.1 5.3-5.3 2.1 2.1-5.3 5.3-2.1Z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M4 7h10m4 0h2M4 17h2m4 0h10M14 5v4M6 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="M12 2c.5 5.8 4.2 9.5 10 10-5.8.5-9.5 4.2-10 10-.5-5.8-4.2-9.5-10-10 5.8-.5 9.5-4.2 10-10Z" fill="currentColor"/></symbol>
+  </svg>
 
-<!-- TOP AD -->
-<div class="ad-slot ad-slot-header">
-  <span class="ad-label">Advertisement</span>
-  <ins class="adsbygoogle"
-       style="display:block;height:90px;"
-       data-ad-client="ca-pub-8935274984783226"
-       data-ad-slot="1271218242"
-       data-ad-format="horizontal"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-
-<!-- HEADER -->
-<header>
-  <div class="live-tag"><span class="live-dot"></span>Prices updated April 2026</div>
-  <h1>AI API Cost <em>Calculator</em></h1>
-  <p class="h1-sub">
-    Estimate your <strong>monthly AI API spend</strong> across OpenAI, Anthropic Claude, Google Gemini, Mistral, DeepSeek and more.
-    Compare 15+ models instantly — free, no signup required.
-  </p>
-  <span class="updated-pill">✦ 15 models · April 2026 pricing · Batch + caching support</span>
-</header>
-
-<!-- MAIN CALCULATOR -->
-<div class="main-grid">
-
-  <!-- LEFT: INPUTS -->
-  <div>
-    <div class="panel fadein">
-      <div class="tab-bar">
-        <button class="tab-btn on" onclick="switchTab('simple',this)">Simple</button>
-        <button class="tab-btn" onclick="switchTab('advanced',this)">Advanced</button>
-        <button class="tab-btn" onclick="switchTab('batch',this)">Batch API</button>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"><svg><use href="#icon-compass"></use></svg></div>
+        <div class="brand-copy"><strong>Wayfinder</strong><span>Your life, in progress</span></div>
       </div>
+      <div class="top-actions">
+        <button class="icon-btn" id="settingsBtn" aria-label="Open data settings"><svg><use href="#icon-settings"></use></svg></button>
+        <button class="primary-btn" id="newQuestBtn"><svg><use href="#icon-plus"></use></svg><span class="label">New quest</span></button>
+      </div>
+      <div class="settings-menu hidden" id="settingsMenu">
+        <button id="exportBtn">↓ Export adventure</button>
+        <label for="importFile">↑ Import adventure</label>
+        <input id="importFile" type="file" accept="application/json">
+        <button class="danger" id="resetBtn">↻ Start over</button>
+      </div>
+    </header>
 
-      <!-- SIMPLE -->
-      <div id="tab-simple" class="tab-content on">
-        <div class="field">
-          <label>Use Case Preset</label>
-          <select id="preset" onchange="applyPreset()">
-            <option value="">— Pick a preset or set manually —</option>
-            <option value="chatbot">Chatbot / Customer Support</option>
-            <option value="doc">Document Summarization</option>
-            <option value="code">Code Generation / Copilot</option>
-            <option value="rag">RAG / Search Augmentation</option>
-            <option value="classify">Classification / Tagging</option>
-            <option value="agent">Autonomous Agent</option>
-          </select>
+    <div class="layout">
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow" id="greeting">Your next chapter</div>
+            <h1>Small steps become great adventures.</h1>
+            <p>Your Game Master has chosen three meaningful quests. Finish what matters, grow your attributes, and remember: rest is part of the journey.</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="sun"></div><div class="mountain back"></div><div class="mountain"></div><div class="path"></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-head">
+            <div class="section-title"><h2>Today’s bounty board</h2><p id="boardSubtitle">Three quests, chosen for a balanced day.</p></div>
+            <div class="date-pill" id="todayLabel"></div>
+          </div>
+          <div class="bounty-grid" id="bountyGrid"></div>
+          <div class="board-complete" id="boardComplete"><span>✦</span><span>Bounty board cleared. You’ll begin tomorrow with the <strong>Well Rested</strong> buff.</span></div>
+        </section>
+
+        <section>
+          <div class="section-head">
+            <div class="section-title"><h2>Quest log</h2><p>Your full map of intentions and victories.</p></div>
+          </div>
+          <div class="quest-panel">
+            <div class="quest-toolbar">
+              <div class="filters">
+                <button class="filter-btn active" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="all">All</button>
+              </div>
+              <span class="quest-count" id="questCount"></span>
+            </div>
+            <div class="quest-list" id="questList"></div>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <section class="side-card profile-card">
+          <div class="profile-top">
+            <div class="level-line">
+              <div class="level-orb" id="levelOrb">1</div>
+              <div class="level-copy"><small>Current path</small><strong id="rankName">Curious Wanderer</strong></div>
+            </div>
+            <div class="xp-line"><span id="xpLabel">0 / 120 XP</span><span id="xpPercent">0%</span></div>
+            <div class="progress"><span id="xpBar" style="width:0%"></span></div>
+          </div>
+          <div class="stats-row">
+            <div class="mini-stat"><strong id="streakStat">0</strong><span>day streak</span></div>
+            <div class="mini-stat"><strong id="doneStat">0</strong><span>quests done</span></div>
+            <div class="mini-stat"><strong id="totalXpStat">0</strong><span>total xp</span></div>
+          </div>
+        </section>
+
+        <section class="side-card">
+          <div class="side-card-body">
+            <div class="side-heading"><h3>Attributes</h3><span>Skill growth</span></div>
+            <div id="attributeList"></div>
+          </div>
+        </section>
+
+        <section class="side-card">
+          <div class="side-card-body">
+            <div class="side-heading"><h3>Active blessings</h3><span id="buffCount">0 active</span></div>
+            <div id="buffList"></div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <div class="modal-wrap hidden" id="questModal" role="dialog" aria-modal="true" aria-labelledby="questModalTitle">
+    <div class="modal">
+      <div class="modal-head">
+        <div><h2 id="questModalTitle">Add a new quest</h2><p>Name the intention. The Game Master handles the points.</p></div>
+        <button class="close-btn" data-close="questModal" aria-label="Close">×</button>
+      </div>
+      <form class="modal-body" id="questForm">
+        <div class="field"><label for="questTitle">What will you do?</label><input id="questTitle" maxlength="90" required placeholder="e.g. Take a 30 minute walk" autocomplete="off"></div>
+        <div class="two-fields">
+          <div class="field"><label for="questAttribute">Life attribute</label>
+            <select id="questAttribute">
+              <option value="strength">Strength · Body</option>
+              <option value="wisdom">Wisdom · Mind</option>
+              <option value="focus">Focus · Craft</option>
+              <option value="charisma">Charisma · People</option>
+              <option value="spirit">Spirit · Balance</option>
+            </select>
+          </div>
+          <div class="field"><label for="questDue">Target date · optional</label><input id="questDue" type="date"></div>
         </div>
-        <div class="field">
-          <label>Monthly Requests</label>
-          <div class="range-wrap">
-            <input type="range" id="s-req" min="100" max="5000000" step="100" value="10000" oninput="syncR('s-req','rv-req'); go()">
-            <span class="range-val" id="rv-req">10,000</span>
+        <div class="field"><label>Difficulty</label>
+          <div class="difficulty-cards">
+            <label class="difficulty-card"><input type="radio" name="difficulty" value="easy"><span>Easy · 25 XP</span></label>
+            <label class="difficulty-card"><input type="radio" name="difficulty" value="medium" checked><span>Medium · 50 XP</span></label>
+            <label class="difficulty-card"><input type="radio" name="difficulty" value="hard"><span>Hard · 90 XP</span></label>
           </div>
         </div>
-        <div class="field">
-          <label>Input Tokens per Request <span class="note">prompt + context</span></label>
-          <div class="range-wrap">
-            <input type="range" id="s-in" min="50" max="100000" step="50" value="500" oninput="syncR('s-in','rv-in'); go()">
-            <span class="range-val" id="rv-in">500</span>
-          </div>
-        </div>
-        <div class="field">
-          <label>Output Tokens per Request <span class="note">completion</span></label>
-          <div class="range-wrap">
-            <input type="range" id="s-out" min="50" max="16000" step="50" value="300" oninput="syncR('s-out','rv-out'); go()">
-            <span class="range-val" id="rv-out">300</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ADVANCED -->
-      <div id="tab-advanced" class="tab-content">
-        <div class="field">
-          <label>Monthly Requests</label>
-          <input type="number" id="a-req" value="10000" min="1" oninput="go()">
-        </div>
-        <div class="field">
-          <label>Input Tokens per Request</label>
-          <input type="number" id="a-in" value="500" min="1" oninput="go()">
-        </div>
-        <div class="field">
-          <label>Output Tokens per Request</label>
-          <input type="number" id="a-out" value="300" min="1" oninput="go()">
-        </div>
-        <div class="field">
-          <label>Prompt Cache Ratio <span class="note">% of input that hits cache</span></label>
-          <div class="range-wrap">
-            <input type="range" id="cache" min="0" max="100" step="5" value="0" oninput="syncR('cache','rv-cache'); go()">
-            <span class="range-val" id="rv-cache">0%</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- BATCH -->
-      <div id="tab-batch" class="tab-content">
-        <div class="field">
-          <label>Total Items to Process</label>
-          <input type="number" id="b-req" value="100000" min="1" oninput="go()">
-        </div>
-        <div class="field">
-          <label>Input Tokens per Item</label>
-          <input type="number" id="b-in" value="800" min="1" oninput="go()">
-        </div>
-        <div class="field">
-          <label>Output Tokens per Item</label>
-          <input type="number" id="b-out" value="200" min="1" oninput="go()">
-        </div>
-        <p style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:8px;line-height:1.6;">
-          ℹ Batch discounts applied automatically — OpenAI: 50%, Anthropic: 50%, others: standard rate.
-        </p>
-      </div>
-    </div>
-
-    <!-- MODEL SELECT -->
-    <div class="panel fadein" style="margin-top:16px;">
-      <div class="panel-head">
-        <span class="panel-label">Select Model</span>
-        <span id="sel-badge" class="badge bb">GPT-4o</span>
-      </div>
-      <div class="panel-body">
-        <div class="model-grid" id="model-grid"></div>
-      </div>
+        <div class="modal-actions"><button type="button" class="ghost-btn" data-close="questModal">Cancel</button><button class="primary-btn" type="submit">Add to quest log</button></div>
+      </form>
     </div>
   </div>
 
-  <!-- RIGHT: RESULTS -->
-  <div class="sticky-col">
-    <div class="panel fadein">
-      <div class="cost-hero">
-        <div class="cost-hero-label">Estimated Monthly Cost</div>
-        <div class="cost-num" id="cost-num">$0.00</div>
-        <div class="cost-period" id="cost-period">—</div>
-      </div>
-      <div class="bk">
-        <div class="bk-row"><span class="bk-k">Input tokens/mo</span><span class="bk-v" id="bk-in">—</span></div>
-        <div class="bk-row"><span class="bk-k">Output tokens/mo</span><span class="bk-v" id="bk-out">—</span></div>
-        <div class="bk-row"><span class="bk-k">Total tokens</span><span class="bk-v" id="bk-total">—</span></div>
-        <div class="bk-rule"></div>
-        <div class="bk-row"><span class="bk-k">Input cost</span><span class="bk-v" id="bk-ic">—</span></div>
-        <div class="bk-row"><span class="bk-k">Output cost</span><span class="bk-v" id="bk-oc">—</span></div>
-        <div class="bk-row"><span class="bk-k">Cache savings</span><span class="bk-v g" id="bk-cs">n/a</span></div>
-        <div class="bk-rule"></div>
-        <div class="bk-row"><span class="bk-k">Per request</span><span class="bk-v" id="bk-pr">—</span></div>
-        <div class="bk-row"><span class="bk-k">Per 1,000 requests</span><span class="bk-v" id="bk-p1k">—</span></div>
-        <div class="bk-row"><span class="bk-k">Annual estimate</span><span class="bk-v y" id="bk-ann">—</span></div>
-      </div>
-      <div class="save-banner" id="save-banner"></div>
-      <div class="panel-footnote">Output tokens cost 3–5× more than input · Prices from provider docs</div>
-    </div>
-
-    <!-- SIDEBAR AD -->
-    <div class="ad-slot" style="margin-top:16px;">
-      <span class="ad-label">Advertisement</span>
-      <ins class="adsbygoogle"
-           style="display:block;min-height:100px;"
-           data-ad-client="ca-pub-8935274984783226"
-           data-ad-slot="5735935223"
-           data-ad-format="rectangle"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <div class="modal-wrap hidden" id="levelModal" role="dialog" aria-modal="true">
+    <div class="modal level-modal">
+      <div class="level-rays"><div class="level-orb" id="newLevelOrb">2</div></div>
+      <h2>Path advanced!</h2>
+      <p id="levelMessage">Your steady effort has carried you to a new level.</p>
+      <button class="primary-btn" data-close="levelModal">Continue the journey</button>
     </div>
   </div>
 
-</div><!-- /main-grid -->
+  <div class="toast" id="toast" role="status"></div>
 
-<!-- COMPARISON TABLE -->
-<div class="panel fadein">
-  <div class="panel-head">
-    <span class="panel-label">Full Model Comparison — Your Workload</span>
-    <span style="font-family:var(--mono);font-size:9px;color:var(--muted);">click any row to select</span>
-  </div>
-  <div id="cmp-table"></div>
-</div>
+  <script>
+    "use strict";
 
-<!-- MID-PAGE AD -->
-<div class="ad-slot ad-slot-inline">
-  <span class="ad-label">Advertisement</span>
-  <ins class="adsbygoogle"
-       style="display:block;height:90px;"
-       data-ad-client="ca-pub-8935274984783226"
-       data-ad-slot="9571238459"
-       data-ad-format="horizontal"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+    const CHARACTER_KEY = "wayfinder_character_state";
+    const QUEST_KEY = "wayfinder_quest_log";
+    const XP_BASE = { easy: 25, medium: 50, hard: 90 };
+    const ATTRIBUTES = {
+      strength: { name: "Strength", icon: "◆", color: "#be7255", soft: "#f5e2da" },
+      wisdom: { name: "Wisdom", icon: "◈", color: "#68869a", soft: "#dfe9ed" },
+      focus: { name: "Focus", icon: "✦", color: "#d09b3c", soft: "#f5e9ca" },
+      charisma: { name: "Charisma", icon: "●", color: "#8b7495", soft: "#ebe2ed" },
+      spirit: { name: "Spirit", icon: "❋", color: "#597a4a", soft: "#e2eadc" }
+    };
+    const RANKS = ["Curious Wanderer", "Steady Pathfinder", "Brave Trailblazer", "Seasoned Wayfinder", "Keeper of Momentum", "Master of the Path"];
+    const STARTER_QUESTS = [
+      ["Take a 20 minute walk", "strength", "easy"],
+      ["Read ten thoughtful pages", "wisdom", "easy"],
+      ["Clear one lingering admin task", "focus", "medium"],
+      ["Reach out to someone you value", "charisma", "medium"],
+      ["Plan tomorrow before winding down", "spirit", "easy"],
+      ["Make progress on your hardest project", "focus", "hard"]
+    ];
+    const MICRO_QUESTS = [
+      ["Drink a full glass of water", "strength", "easy"],
+      ["Step outside for five mindful minutes", "spirit", "easy"],
+      ["Tidy one small surface", "focus", "easy"],
+      ["Send one kind message", "charisma", "easy"],
+      ["Write down one thing you learned", "wisdom", "easy"]
+    ];
 
-<!-- AFFILIATE LINKS -->
-<div class="aff-section">
-  <div class="aff-title">Get Started with an AI API Provider</div>
-  <div class="aff-grid">
-    <a class="aff-card" href="https://platform.openai.com/signup" target="_blank" rel="noopener sponsored">
-      <span class="aff-provider">OpenAI</span>
-      <span class="aff-desc">GPT-4o, o3, GPT-4.1. Industry standard with the widest ecosystem.</span>
-      <span class="aff-cta">Open platform →</span>
-    </a>
-    <a class="aff-card" href="https://console.anthropic.com/login" target="_blank" rel="noopener sponsored">
-      <span class="aff-provider">Anthropic</span>
-      <span class="aff-desc">Claude Sonnet, Haiku & Opus. Best for long context and coding.</span>
-      <span class="aff-cta">Open console →</span>
-    </a>
-    <a class="aff-card" href="https://aistudio.google.com/" target="_blank" rel="noopener sponsored">
-      <span class="aff-provider">Google AI Studio</span>
-      <span class="aff-desc">Gemini 2.5 Pro & Flash. 1M token context, free tier available.</span>
-      <span class="aff-cta">Open AI Studio →</span>
-    </a>
-    <a class="aff-card" href="https://console.mistral.ai/" target="_blank" rel="noopener sponsored">
-      <span class="aff-provider">Mistral AI</span>
-      <span class="aff-desc">European AI. Mistral Small at $0.10/M — one of the cheapest capable models.</span>
-      <span class="aff-cta">Open console →</span>
-    </a>
-    <a class="aff-card" href="https://platform.deepseek.com/" target="_blank" rel="noopener sponsored">
-      <span class="aff-provider">DeepSeek</span>
-      <span class="aff-desc">DeepSeek V3. Extremely cost-effective for high-volume workloads.</span>
-      <span class="aff-cta">Open platform →</span>
-    </a>
-    <a class="aff-card" href="https://groq.com/" target="_blank" rel="noopener sponsored">
-      <span class="aff-provider">Groq</span>
-      <span class="aff-desc">Fastest inference available. Llama 4 and Mixtral at ultra-low latency.</span>
-      <span class="aff-cta">Start free →</span>
-    </a>
-  </div>
-</div>
+    let character;
+    let quests;
+    let activeFilter = "active";
+    let toastTimer;
 
-<!-- SEO CONTENT -->
-<div class="content-section">
-  <h2>How to Use This AI API Cost Calculator</h2>
-  <p>Enter your expected <strong>monthly request volume</strong>, average <strong>input tokens per request</strong> (your prompt + any context), and average <strong>output tokens</strong> (the AI's response length). The calculator instantly computes your estimated monthly spend and ranks all 15+ models from cheapest to most expensive for your exact workload.</p>
+    const $ = (id) => document.getElementById(id);
+    const localDate = (date = new Date()) => {
+      const offset = date.getTimezoneOffset() * 60000;
+      return new Date(date.getTime() - offset).toISOString().slice(0, 10);
+    };
+    const addDays = (dateString, amount) => {
+      const date = new Date(dateString + "T12:00:00");
+      date.setDate(date.getDate() + amount);
+      return localDate(date);
+    };
+    const uid = () => `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+    const thresholdFor = (level) => 120 + (level - 1) * 80;
+    const attrThreshold = (level) => 80 + (level - 1) * 45;
+    const escapeHTML = (value) => String(value).replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[char]));
 
-  <h3>What Are Input vs Output Tokens?</h3>
-  <p>Tokens are chunks of text — roughly 0.75 words per token in English. <strong>Input tokens</strong> are everything you send to the model: the system prompt, user message, and any conversation history or retrieved context. <strong>Output tokens</strong> are the model's response. Output tokens cost significantly more — typically 3–5× the input price — because generating text requires more compute than reading it.</p>
+    function defaultCharacter() {
+      return {
+        schemaVersion: 1,
+        level: 1,
+        xp: 0,
+        totalXP: 0,
+        attributes: Object.fromEntries(Object.keys(ATTRIBUTES).map(key => [key, { level: 1, xp: 0 }])),
+        streak: 0,
+        completionDates: [],
+        buffs: { wellRestedDate: null },
+        daily: { date: null, ids: [], completed: false },
+        lastVisit: null
+      };
+    }
 
-  <h3>Understanding Prompt Caching</h3>
-  <p>If your prompts include a large, repeated system prompt or static context (common in RAG, agents, and chatbots), <strong>prompt caching</strong> can reduce input costs by 50–90%. Anthropic Claude and OpenAI both support caching. Use the Advanced tab to model this saving.</p>
+    function starterQuests() {
+      return STARTER_QUESTS.map(([title, attribute, difficulty], index) => ({
+        id: `starter-${index + 1}`, title, attribute, difficulty,
+        status: "active", createdAt: new Date().toISOString(), completedAt: null, xpEarned: 0, dueDate: ""
+      }));
+    }
 
-  <h3>When to Use Batch API</h3>
-  <p>If your workload is <strong>not latency-sensitive</strong> — bulk data processing, evaluation runs, overnight jobs — OpenAI's Batch API and Anthropic's Message Batches both offer <strong>50% off</strong> standard pricing. Switch to the Batch Mode tab to calculate your discounted cost.</p>
+    function loadState() {
+      try {
+        character = { ...defaultCharacter(), ...JSON.parse(localStorage.getItem(CHARACTER_KEY) || "null") };
+        character.attributes = { ...defaultCharacter().attributes, ...(character.attributes || {}) };
+        quests = JSON.parse(localStorage.getItem(QUEST_KEY) || "null") || starterQuests();
+        if (!Array.isArray(quests)) throw new Error("Quest log is invalid");
+      } catch (error) {
+        console.warn("Saved data could not be read; starting safely.", error);
+        character = defaultCharacter();
+        quests = starterQuests();
+      }
+    }
 
-  <h3>Which AI API Is the Cheapest in 2026?</h3>
-  <p>For high-volume, cost-sensitive workloads: <strong>Google Gemini Flash Lite</strong> ($0.075/$0.30 per million tokens) and <strong>Mistral Small 3.1</strong> ($0.10/$0.30) are the most affordable capable options. <strong>DeepSeek V3</strong> ($0.27/$1.10) is excellent value for complex tasks. For maximum capability, <strong>GPT-4.1</strong> and <strong>Claude Sonnet 4</strong> offer the best quality-to-cost ratio.</p>
-</div>
+    function saveState() {
+      localStorage.setItem(CHARACTER_KEY, JSON.stringify(character));
+      localStorage.setItem(QUEST_KEY, JSON.stringify(quests));
+    }
 
-<!-- FAQ -->
-<div class="faq-section">
-  <h2 class="faq-title">Frequently Asked Questions</h2>
+    function seededRandom(seed) {
+      let value = [...seed].reduce((sum, char) => ((sum << 5) - sum + char.charCodeAt(0)) | 0, 0);
+      return () => {
+        value = Math.imul(value ^ (value >>> 15), 1 | value);
+        value ^= value + Math.imul(value ^ (value >>> 7), 61 | value);
+        return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+      };
+    }
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)"><span>How much does the OpenAI GPT-4o API cost in 2026?</span><span>+</span></button>
-    <div class="faq-a">GPT-4o costs $2.50 per million input tokens and $10.00 per million output tokens as of April 2026. With prompt caching enabled, cached input tokens drop to $1.25/M. The Batch API reduces both by 50%.</div>
-  </div>
+    function ensureQuestSupply(count) {
+      const active = quests.filter(q => q.status === "active");
+      if (active.length >= count) return;
+      const existingTitles = new Set(active.map(q => q.title));
+      for (const [title, attribute, difficulty] of MICRO_QUESTS) {
+        if (quests.filter(q => q.status === "active").length >= count) break;
+        if (!existingTitles.has(title)) {
+          quests.push({
+            id: uid(), title, attribute, difficulty, status: "active", system: true,
+            createdAt: new Date().toISOString(), completedAt: null, xpEarned: 0, dueDate: ""
+          });
+          existingTitles.add(title);
+        }
+      }
+    }
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)"><span>How much does the Anthropic Claude API cost?</span><span>+</span></button>
-    <div class="faq-a">Claude Sonnet 4 costs $3.00/M input and $15.00/M output. Claude Haiku 3.5 is $0.80/$4.00 — ideal for high-volume tasks. Claude Opus 4 is $15.00/$75.00 for maximum capability. All support 50% batch discounts and aggressive prompt caching.</div>
-  </div>
+    function updateStreak() {
+      const dates = [...new Set(character.completionDates || [])].sort().reverse();
+      if (!dates.length) { character.streak = 0; return; }
+      const today = localDate();
+      const yesterday = addDays(today, -1);
+      if (dates[0] !== today && dates[0] !== yesterday) { character.streak = 0; return; }
+      let streak = 1;
+      for (let i = 1; i < dates.length; i++) {
+        if (dates[i] === addDays(dates[i - 1], -1)) streak++;
+        else break;
+      }
+      character.streak = streak;
+    }
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)"><span>What is the cheapest capable AI API right now?</span><span>+</span></button>
-    <div class="faq-a">As of April 2026: Google Gemini Flash Lite at $0.075/$0.30, Mistral Small 3.1 at $0.10/$0.30, and DeepSeek V3 at $0.27/$1.10 per million tokens are the cheapest capable options. Google AI Studio also offers a generous free tier on Gemini models.</div>
-  </div>
+    function rotateDailyBoard() {
+      const today = localDate();
+      if (character.daily?.date === today && character.daily.ids?.length) return;
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)"><span>How do I calculate AI API costs manually?</span><span>+</span></button>
-    <div class="faq-a">Formula: (monthly_requests × avg_input_tokens / 1,000,000 × input_price) + (monthly_requests × avg_output_tokens / 1,000,000 × output_price). For example: 10,000 requests × 500 input tokens = 5M input tokens. At GPT-4o pricing ($2.50/M): 5 × $2.50 = $12.50 for input alone.</div>
-  </div>
+      const previous = character.daily || {};
+      if (previous.date && previous.ids?.length && !previous.completed) {
+        const hasRecovery = quests.some(q => q.status === "active" && q.recovery);
+        if (!hasRecovery) {
+          quests.unshift({
+            id: uid(), title: "Recovery quest: drink a glass of water", attribute: "spirit", difficulty: "easy",
+            status: "active", recovery: true, system: true, createdAt: new Date().toISOString(),
+            completedAt: null, xpEarned: 0, dueDate: today
+          });
+        }
+      }
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)"><span>Does OpenAI offer a free API tier in 2026?</span><span>+</span></button>
-    <div class="faq-a">OpenAI does not offer a persistent free API tier — you pay per token from the start, though new accounts receive trial credits. Google AI Studio offers the most generous free tier in 2026, with free access to Gemini Flash at moderate rate limits.</div>
-  </div>
+      ensureQuestSupply(3);
+      const candidates = quests.filter(q => q.status === "active");
+      const random = seededRandom(today);
+      const shuffled = [...candidates].sort(() => random() - .5);
+      const recovery = candidates.find(q => q.recovery);
+      const ids = recovery ? [recovery.id, ...shuffled.filter(q => q.id !== recovery.id).slice(0, 2).map(q => q.id)] : shuffled.slice(0, 3).map(q => q.id);
+      character.daily = { date: today, ids, completed: false };
+      character.lastVisit = today;
+      saveState();
+    }
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)"><span>What's the difference between GPT-4o and GPT-4.1?</span><span>+</span></button>
-    <div class="faq-a">GPT-4.1 has a 1M token context window vs GPT-4o's 128k, improved instruction following, and lower pricing ($2.00/$8.00 vs $2.50/$10.00). GPT-4.1 is generally the better choice for new projects in 2026.</div>
-  </div>
-</div>
+    function calculateXP(quest) {
+      let multiplier = 1;
+      const bonuses = [];
+      if (new Date().getHours() < 12) { multiplier += .2; bonuses.push("Early Bird +20%"); }
+      if (character.streak >= 3) { multiplier += .15; bonuses.push("Momentum +15%"); }
+      if (character.buffs.wellRestedDate === localDate()) { multiplier += .1; bonuses.push("Well Rested +10%"); }
+      if (quest.recovery) { multiplier += .1; bonuses.push("Fresh Start +10%"); }
+      return { amount: Math.round(XP_BASE[quest.difficulty] * multiplier), bonuses };
+    }
 
-<!-- BOTTOM AD -->
-<div class="ad-slot ad-slot-footer">
-  <span class="ad-label">Advertisement</span>
-  <ins class="adsbygoogle"
-       style="display:block;height:90px;"
-       data-ad-client="ca-pub-8935274984783226"
-       data-ad-slot="2572172105"
-       data-ad-format="horizontal"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+    function applyCharacterXP(amount, attribute) {
+      let levelled = false;
+      character.totalXP += amount;
+      character.xp += amount;
+      while (character.xp >= thresholdFor(character.level)) {
+        character.xp -= thresholdFor(character.level);
+        character.level++;
+        levelled = true;
+      }
+      const skill = character.attributes[attribute];
+      skill.xp += amount;
+      while (skill.xp >= attrThreshold(skill.level)) {
+        skill.xp -= attrThreshold(skill.level);
+        skill.level++;
+      }
+      return levelled;
+    }
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">AI Cost Calculator</div>
-      <p class="footer-note">Free tool for developers, PMs, and founders to estimate LLM spend before committing. Prices updated monthly from official provider documentation.</p>
-    </div>
-    <div class="footer-links">
-      <a href="https://openai.com/pricing" target="_blank" rel="noopener">OpenAI Pricing ↗</a>
-      <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener">Anthropic Pricing ↗</a>
-      <a href="https://ai.google.dev/pricing" target="_blank" rel="noopener">Google AI Pricing ↗</a>
-      <a href="https://mistral.ai/pricing" target="_blank" rel="noopener">Mistral Pricing ↗</a>
-      <a href="https://www.deepseek.com/pricing" target="_blank" rel="noopener">DeepSeek Pricing ↗</a>
-    </div>
-  </div>
-  <p class="disclaimer">
-    Estimates only · Not financial advice · Prices subject to change without notice · Always verify with official provider documentation before budgeting ·
-    © 2026 AI Cost Calculator · aicostcalculator.dev · Updated April 23, 2026
-  </p>
-</footer>
+    function completeQuest(id) {
+      const quest = quests.find(item => item.id === id);
+      if (!quest || quest.status === "completed") return;
+      const reward = calculateXP(quest);
+      quest.status = "completed";
+      quest.completedAt = new Date().toISOString();
+      quest.xpEarned = reward.amount;
+      const today = localDate();
+      if (!character.completionDates.includes(today)) character.completionDates.push(today);
+      updateStreak();
+      const levelled = applyCharacterXP(reward.amount, quest.attribute);
 
-</div><!-- /wrap -->
+      const boardQuests = character.daily.ids.map(qid => quests.find(item => item.id === qid)).filter(Boolean);
+      if (boardQuests.length === 3 && boardQuests.every(item => item.status === "completed")) {
+        character.daily.completed = true;
+        character.buffs.wellRestedDate = addDays(today, 1);
+      }
+      saveState();
+      render();
+      const bonusText = reward.bonuses.length ? ` · ${reward.bonuses.join(" · ")}` : "";
+      showToast(`+${reward.amount} XP to ${ATTRIBUTES[quest.attribute].name}${bonusText}`);
+      if (levelled) showLevelUp();
+    }
 
-<script>
-const M = [
-  { id:'gpt4o',     name:'GPT-4o',           prov:'OpenAI',    in:2.50,  out:10.00, ci:1.25,  bi:1.25,  bo:5.00,  ctx:'128k' },
-  { id:'gpt41',     name:'GPT-4.1',          prov:'OpenAI',    in:2.00,  out:8.00,  ci:0.50,  bi:1.00,  bo:4.00,  ctx:'1M'   },
-  { id:'gpt4omini', name:'GPT-4o mini',      prov:'OpenAI',    in:0.15,  out:0.60,  ci:0.075, bi:0.075, bo:0.30,  ctx:'128k' },
-  { id:'o3',        name:'o3',               prov:'OpenAI',    in:10.00, out:40.00, ci:2.50,  bi:5.00,  bo:20.00, ctx:'200k' },
-  { id:'o4mini',    name:'o4-mini',          prov:'OpenAI',    in:1.10,  out:4.40,  ci:0.275, bi:0.55,  bo:2.20,  ctx:'200k' },
-  { id:'sonnet',    name:'Claude Sonnet 4',  prov:'Anthropic', in:3.00,  out:15.00, ci:0.30,  bi:1.50,  bo:7.50,  ctx:'200k' },
-  { id:'haiku',     name:'Claude Haiku 3.5', prov:'Anthropic', in:0.80,  out:4.00,  ci:0.08,  bi:0.40,  bo:2.00,  ctx:'200k' },
-  { id:'opus',      name:'Claude Opus 4',    prov:'Anthropic', in:15.00, out:75.00, ci:1.50,  bi:7.50,  bo:37.50, ctx:'200k' },
-  { id:'g25pro',    name:'Gemini 2.5 Pro',   prov:'Google',    in:1.25,  out:10.00, ci:0.31,  bi:0.625, bo:5.00,  ctx:'1M'   },
-  { id:'g25fl',     name:'Gemini 2.5 Flash', prov:'Google',    in:0.15,  out:0.60,  ci:0.037, bi:0.075, bo:0.30,  ctx:'1M'   },
-  { id:'gflite',    name:'Gemini Flash Lite',prov:'Google',    in:0.075, out:0.30,  ci:0.018, bi:0.037, bo:0.15,  ctx:'1M'   },
-  { id:'mistlg',    name:'Mistral Large 2',  prov:'Mistral',   in:2.00,  out:6.00,  ci:2.00,  bi:1.00,  bo:3.00,  ctx:'128k' },
-  { id:'mistsm',    name:'Mistral Small 3.1',prov:'Mistral',   in:0.10,  out:0.30,  ci:0.10,  bi:0.05,  bo:0.15,  ctx:'128k' },
-  { id:'llama4',    name:'Llama 4 Scout',    prov:'Groq',      in:0.11,  out:0.34,  ci:0.11,  bi:0.055, bo:0.17,  ctx:'128k' },
-  { id:'deepv3',    name:'DeepSeek V3',      prov:'DeepSeek',  in:0.27,  out:1.10,  ci:0.07,  bi:0.135, bo:0.55,  ctx:'64k'  },
-];
+    function createQuest(event) {
+      event.preventDefault();
+      const title = $("questTitle").value.trim();
+      if (!title) return;
+      const difficulty = document.querySelector('input[name="difficulty"]:checked').value;
+      quests.unshift({
+        id: uid(), title, attribute: $("questAttribute").value, difficulty,
+        status: "active", createdAt: new Date().toISOString(), completedAt: null,
+        xpEarned: 0, dueDate: $("questDue").value
+      });
+      saveState();
+      event.target.reset();
+      closeModal("questModal");
+      render();
+      showToast("Quest added to your adventure.");
+    }
 
-const PRESETS = {
-  chatbot:  { req:50000,   in:800,   out:400  },
-  doc:      { req:5000,    in:8000,  out:600  },
-  code:     { req:20000,   in:1200,  out:800  },
-  rag:      { req:100000,  in:2000,  out:300  },
-  classify: { req:500000,  in:200,   out:30   },
-  agent:    { req:3000,    in:10000, out:2000 },
-};
+    function abandonQuest(id) {
+      const quest = quests.find(item => item.id === id);
+      if (!quest || !confirm(`Remove “${quest.title}” from your quest log?`)) return;
+      quests = quests.filter(item => item.id !== id);
+      if (character.daily.ids.includes(id)) {
+        ensureQuestSupply(3);
+        const replacement = quests.find(q => q.status === "active" && !character.daily.ids.includes(q.id));
+        character.daily.ids = character.daily.ids.filter(qid => qid !== id);
+        if (replacement) character.daily.ids.push(replacement.id);
+      }
+      saveState();
+      render();
+    }
 
-let sel = 'gpt4o';
-let activeTab = 'simple';
+    function renderBounties() {
+      const items = character.daily.ids.map(id => quests.find(q => q.id === id)).filter(Boolean);
+      $("bountyGrid").innerHTML = items.map((quest, index) => {
+        const attr = ATTRIBUTES[quest.attribute];
+        const done = quest.status === "completed";
+        const xp = done ? quest.xpEarned : calculateXP(quest).amount;
+        return `<article class="bounty-card ${done ? "done" : ""}">
+          <span class="bounty-number">0${index + 1}</span>
+          <div class="quest-icon" style="--icon:${attr.color};--icon-soft:${attr.soft}">${attr.icon}</div>
+          <h3>${escapeHTML(quest.title)}</h3>
+          <div class="quest-meta"><span>${attr.name}</span><span>·</span><span>${quest.difficulty}</span>${quest.recovery ? "<span>· Recovery</span>" : ""}</div>
+          <div class="xp-preview">${done ? `Earned ${xp} XP` : `Up to ${xp} XP`}</div>
+          <button class="complete-btn ${done ? "done" : ""}" ${done ? "disabled" : `onclick="completeQuest('${quest.id}')"`}>${done ? "✓ Quest complete" : "Mark complete"}</button>
+        </article>`;
+      }).join("");
+      $("boardComplete").classList.toggle("show", character.daily.completed);
+      $("boardSubtitle").textContent = items.some(q => q.recovery) ? "A gentle restart is on the board. Momentum begins small." : "Three quests, chosen for a balanced day.";
+    }
 
-(function init() { buildGrid(); go(); })();
+    function renderQuestLog() {
+      const filtered = quests.filter(q => activeFilter === "all" || q.status === activeFilter);
+      $("questCount").textContent = `${filtered.length} quest${filtered.length === 1 ? "" : "s"}`;
+      $("questList").innerHTML = filtered.length ? filtered.map(quest => {
+        const attr = ATTRIBUTES[quest.attribute] || ATTRIBUTES.focus;
+        const completed = quest.status === "completed";
+        const dateText = completed ? `Completed ${new Date(quest.completedAt).toLocaleDateString(undefined, { month: "short", day: "numeric" })} · ${quest.xpEarned} XP` : quest.dueDate ? `Target ${new Date(quest.dueDate + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" })}` : attr.name;
+        return `<div class="quest-row ${completed ? "is-completed" : ""}">
+          <div class="quest-icon" style="--icon:${attr.color};--icon-soft:${attr.soft}">${attr.icon}</div>
+          <div><div class="quest-row-title">${escapeHTML(quest.title)}</div><div class="quest-row-sub">${dateText}</div></div>
+          <span class="difficulty">${quest.difficulty}</span>
+          ${completed ? `<button class="row-action abandon" title="Remove quest" onclick="abandonQuest('${quest.id}')">×</button>` : `<button class="row-action" onclick="completeQuest('${quest.id}')">Complete</button>`}
+        </div>`;
+      }).join("") : `<div class="empty-state">No quests here yet. Your next chapter is ready when you are.</div>`;
+    }
 
-function buildGrid() {
-  document.getElementById('model-grid').innerHTML = M.map(m => `
-    <div class="mc ${m.id===sel?'on':''}" onclick="pick('${m.id}')">
-      <div class="mc-name">${m.name}</div>
-      <div class="mc-prov">${m.prov} · ${m.ctx}</div>
-      <div class="mc-price">$${m.in} / $${m.out} per 1M</div>
-    </div>`).join('');
-}
+    function renderCharacter() {
+      const threshold = thresholdFor(character.level);
+      const percent = Math.min(100, Math.round(character.xp / threshold * 100));
+      $("levelOrb").textContent = character.level;
+      $("rankName").textContent = RANKS[Math.min(RANKS.length - 1, Math.floor((character.level - 1) / 2))];
+      $("xpLabel").textContent = `${character.xp} / ${threshold} XP`;
+      $("xpPercent").textContent = `${percent}%`;
+      $("xpBar").style.width = `${percent}%`;
+      $("streakStat").textContent = character.streak;
+      $("doneStat").textContent = quests.filter(q => q.status === "completed").length;
+      $("totalXpStat").textContent = character.totalXP;
 
-function pick(id) {
-  sel = id;
-  buildGrid();
-  document.getElementById('sel-badge').textContent = M.find(m=>m.id===id).name;
-  go();
-}
+      $("attributeList").innerHTML = Object.entries(ATTRIBUTES).map(([key, attr]) => {
+        const skill = character.attributes[key];
+        const threshold = attrThreshold(skill.level);
+        return `<div class="attribute" style="--attr:${attr.color}">
+          <div class="attribute-head"><span class="attribute-name"><i></i>${attr.name}</span><span class="attribute-level">LV ${skill.level} · ${skill.xp}/${threshold}</span></div>
+          <div class="progress"><span style="width:${Math.min(100, skill.xp / threshold * 100)}%"></span></div>
+        </div>`;
+      }).join("");
+    }
 
-function switchTab(tab, btn) {
-  activeTab = tab;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('on'));
-  document.getElementById('tab-' + tab).classList.add('on');
-  go();
-}
+    function renderBuffs() {
+      const active = [];
+      if (character.buffs.wellRestedDate === localDate()) active.push(["☀", "Well Rested", "+10% XP on every quest today"]);
+      if (character.streak >= 3) active.push(["⚡", "Momentum", "+15% XP from your active streak"]);
+      if (new Date().getHours() < 12) active.push(["↗", "Early Bird", "+20% XP for quests before noon"]);
+      if (!active.length) active.push(["◌", "Room to breathe", "Complete today’s board for a new blessing"]);
+      $("buffCount").textContent = `${active[0][0] === "◌" ? 0 : active.length} active`;
+      $("buffList").innerHTML = active.map(([icon, title, text]) => `<div class="buff"><div class="buff-icon">${icon}</div><div><strong>${title}</strong><span>${text}</span></div></div>`).join("");
+    }
 
-function applyPreset() {
-  const p = PRESETS[document.getElementById('preset').value];
-  if (!p) return;
-  setSlider('s-req', p.req); syncR('s-req','rv-req');
-  setSlider('s-in',  p.in);  syncR('s-in','rv-in');
-  setSlider('s-out', p.out); syncR('s-out','rv-out');
-  go();
-}
+    function render() {
+      updateStreak();
+      $("todayLabel").textContent = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+      const hour = new Date().getHours();
+      $("greeting").textContent = hour < 12 ? "A fresh morning awaits" : hour < 18 ? "Keep moving forward" : "An evening of intention";
+      renderBounties();
+      renderQuestLog();
+      renderCharacter();
+      renderBuffs();
+    }
 
-function setSlider(id, val) {
-  const el = document.getElementById(id);
-  if (el) el.value = Math.min(Math.max(val, el.min||0), el.max||1e9);
-}
+    function showLevelUp() {
+      $("newLevelOrb").textContent = character.level;
+      $("levelMessage").textContent = `You reached level ${character.level}, ${$("rankName").textContent}. Keep choosing steady progress over perfect days.`;
+      openModal("levelModal");
+    }
+    function showToast(message) {
+      clearTimeout(toastTimer);
+      $("toast").textContent = message;
+      $("toast").classList.add("show");
+      toastTimer = setTimeout(() => $("toast").classList.remove("show"), 3600);
+    }
+    function openModal(id) {
+      $(id).classList.remove("hidden");
+      if (id === "questModal") setTimeout(() => $("questTitle").focus(), 50);
+    }
+    function closeModal(id) { $(id).classList.add("hidden"); }
 
-function syncR(rid, did) {
-  const v = parseFloat(document.getElementById(rid).value);
-  const d = document.getElementById(did);
-  if (rid === 'cache') { d.textContent = v + '%'; return; }
-  d.textContent = v >= 1e6 ? (v/1e6).toFixed(1)+'M' : v >= 1e3 ? (v/1e3).toFixed(1)+'k' : String(v);
-}
+    function exportData() {
+      const data = { app: "Wayfinder", version: 1, exportedAt: new Date().toISOString(), character_state: character, quest_log: quests };
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
+      link.download = `wayfinder-${localDate()}.json`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+      $("settingsMenu").classList.add("hidden");
+    }
 
-function readInputs() {
-  if (activeTab === 'simple') return {
-    req: +document.getElementById('s-req').value || 10000,
-    inp: +document.getElementById('s-in').value  || 500,
-    out: +document.getElementById('s-out').value || 300,
-    cache: 0, batch: false
-  };
-  if (activeTab === 'advanced') return {
-    req: +document.getElementById('a-req').value || 10000,
-    inp: +document.getElementById('a-in').value  || 500,
-    out: +document.getElementById('a-out').value || 300,
-    cache: (+document.getElementById('cache').value||0)/100,
-    batch: false
-  };
-  return {
-    req: +document.getElementById('b-req').value || 100000,
-    inp: +document.getElementById('b-in').value  || 800,
-    out: +document.getElementById('b-out').value || 200,
-    cache: 0, batch: true
-  };
-}
+    function importData(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const data = JSON.parse(reader.result);
+          if (!data.character_state || !Array.isArray(data.quest_log)) throw new Error("Missing Wayfinder data");
+          character = { ...defaultCharacter(), ...data.character_state };
+          character.attributes = { ...defaultCharacter().attributes, ...(data.character_state.attributes || {}) };
+          quests = data.quest_log;
+          rotateDailyBoard();
+          saveState();
+          render();
+          showToast("Adventure imported successfully.");
+        } catch (error) {
+          alert("That file is not a valid Wayfinder export.");
+        }
+        event.target.value = "";
+        $("settingsMenu").classList.add("hidden");
+      };
+      reader.readAsText(file);
+    }
 
-function calcCost(model, inp) {
-  const totalIn  = inp.req * inp.inp;
-  const totalOut = inp.req * inp.out;
-  const inRate   = inp.batch && model.bi ? model.bi : model.in;
-  const outRate  = inp.batch && model.bo ? model.bo : model.out;
-  const cacheRate = model.ci !== undefined ? model.ci : inRate;
-  const cachedIn  = totalIn * inp.cache;
-  const normalIn  = totalIn * (1 - inp.cache);
-  const inputCost  = (normalIn/1e6)*inRate + (cachedIn/1e6)*cacheRate;
-  const outputCost = (totalOut/1e6)*outRate;
-  const cacheSave  = (cachedIn/1e6)*(inRate - cacheRate);
-  return { total: inputCost+outputCost, inputCost, outputCost, cacheSave, totalIn, totalOut };
-}
+    function resetData() {
+      if (!confirm("Start a new adventure? This clears all quests and progress. Export first if you want a backup.")) return;
+      localStorage.removeItem(CHARACTER_KEY);
+      localStorage.removeItem(QUEST_KEY);
+      loadState();
+      rotateDailyBoard();
+      render();
+      $("settingsMenu").classList.add("hidden");
+      showToast("A new adventure begins.");
+    }
 
-function $$(n) {
-  if (n===0) return '$0.00';
-  if (n<0.0001) return '<$0.0001';
-  if (n<0.01) return '$'+n.toFixed(5);
-  if (n<1)    return '$'+n.toFixed(4);
-  if (n<100)  return '$'+n.toFixed(2);
-  return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-}
+    $("newQuestBtn").addEventListener("click", () => openModal("questModal"));
+    $("questForm").addEventListener("submit", createQuest);
+    $("settingsBtn").addEventListener("click", event => {
+      event.stopPropagation();
+      $("settingsMenu").classList.toggle("hidden");
+    });
+    $("exportBtn").addEventListener("click", exportData);
+    $("importFile").addEventListener("change", importData);
+    $("resetBtn").addEventListener("click", resetData);
+    document.querySelectorAll("[data-close]").forEach(button => button.addEventListener("click", () => closeModal(button.dataset.close)));
+    document.querySelectorAll(".modal-wrap").forEach(wrap => wrap.addEventListener("click", event => {
+      if (event.target === wrap) closeModal(wrap.id);
+    }));
+    document.querySelectorAll(".filter-btn").forEach(button => button.addEventListener("click", () => {
+      activeFilter = button.dataset.filter;
+      document.querySelectorAll(".filter-btn").forEach(item => item.classList.toggle("active", item === button));
+      renderQuestLog();
+    }));
+    document.addEventListener("click", event => {
+      if (!$("settingsMenu").contains(event.target) && event.target !== $("settingsBtn")) $("settingsMenu").classList.add("hidden");
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeModal("questModal");
+        closeModal("levelModal");
+        $("settingsMenu").classList.add("hidden");
+      }
+    });
 
-function tok(n) {
-  if (n>=1e9) return (n/1e9).toFixed(2)+'B';
-  if (n>=1e6) return (n/1e6).toFixed(2)+'M';
-  if (n>=1e3) return (n/1e3).toFixed(1)+'k';
-  return String(n);
-}
-
-function go() {
-  const inp = readInputs();
-  const model = M.find(m=>m.id===sel);
-  const r = calcCost(model, inp);
-
-  const numEl = document.getElementById('cost-num');
-  numEl.classList.add('flash');
-  setTimeout(() => { numEl.textContent = $$(r.total); numEl.classList.remove('flash'); }, 80);
-
-  const unit = inp.batch ? 'items' : 'requests';
-  document.getElementById('cost-period').textContent = inp.req.toLocaleString()+' '+unit+'/month';
-
-  document.getElementById('bk-in').textContent    = tok(r.totalIn);
-  document.getElementById('bk-out').textContent   = tok(r.totalOut);
-  document.getElementById('bk-total').textContent = tok(r.totalIn+r.totalOut);
-  document.getElementById('bk-ic').textContent    = $$(r.inputCost);
-  document.getElementById('bk-oc').textContent    = $$(r.outputCost);
-  document.getElementById('bk-cs').textContent    = r.cacheSave>0 ? '-'+$$(r.cacheSave) : 'n/a';
-  const perReq = r.total/inp.req;
-  document.getElementById('bk-pr').textContent    = $$(perReq);
-  document.getElementById('bk-p1k').textContent   = $$(perReq*1000);
-  document.getElementById('bk-ann').textContent   = $$(r.total*12);
-
-  buildTable(inp, r.total);
-}
-
-function buildTable(inp, selCost) {
-  const ranked = M.map(m=>({...m, cost:calcCost(m,inp).total})).sort((a,b)=>a.cost-b.cost);
-  const max = ranked[ranked.length-1].cost||1;
-
-  document.getElementById('cmp-table').innerHTML = ranked.map((m,i)=>{
-    const isCheap = i===0, isPricey = i===ranked.length-1, isSel = m.id===sel;
-    const pct = (m.cost/max*100).toFixed(1);
-    const cls = [isSel?'sel':'',isCheap?'cheapest':'',isPricey?'priciest':''].filter(Boolean).join(' ');
-    const badge = isCheap?'<span class="badge bg">cheapest</span>':isPricey?'<span class="badge bo">priciest</span>':isSel?'<span class="badge bb">selected</span>':'';
-    return `<div class="cmp-row ${cls}" onclick="pick('${m.id}')">
-      <div><div class="cmp-name">${m.name}${badge}</div><div class="cmp-prov">${m.prov}</div></div>
-      <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
-      <div class="cmp-cost">${$$(m.cost)}</div>
-    </div>`;
-  }).join('');
-
-  const cheapest = ranked[0];
-  const banner = document.getElementById('save-banner');
-  if (cheapest.id!==sel && cheapest.cost<selCost*0.8) {
-    const save = selCost-cheapest.cost;
-    const pct = ((save/selCost)*100).toFixed(0);
-    banner.style.display='block';
-    banner.innerHTML=`💡 Switch to <strong>${cheapest.name}</strong> → save <strong>${$$(save)}/mo</strong> (${pct}% · ${$$(save*12)}/yr)`;
-  } else { banner.style.display='none'; }
-}
-
-function toggleFaq(btn) {
-  const a = btn.nextElementSibling;
-  const open = a.classList.contains('open');
-  document.querySelectorAll('.faq-a.open').forEach(el=>el.classList.remove('open'));
-  document.querySelectorAll('.faq-q.open').forEach(el=>el.classList.remove('open'));
-  if (!open) { a.classList.add('open'); btn.classList.add('open'); }
-}
-</script>
-<footer><p><a href="/privacy.html">Privacy Policy</a> · <a href="/contact.html">Contact</a></p></footer>
+    loadState();
+    rotateDailyBoard();
+    render();
+  </script>
 </body>
 </html>
