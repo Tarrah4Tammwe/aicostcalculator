@@ -112,10 +112,10 @@
     <a class="brand" href="/">AI Cost Calculator</a>
     <nav class="nav" aria-label="Primary">
       <a href="/" aria-current="page">Calculator</a>
-      <a href="/pricing">Rate card</a>
-      <a href="/guide">Guide</a>
-      <a href="/methodology">Methodology</a>
-      <a href="/about">About</a>
+      <a href="/pricing/">Rate card</a>
+      <a href="/guide/">Guide</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
     </nav>
   </div>
 </header>
@@ -134,7 +134,7 @@
   <section id="calculator" aria-labelledby="calc-title">
     <h2 id="calc-title" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Cost calculator</h2>
     <noscript>
-      <p class="callout">The interactive estimate needs JavaScript. The <a href="/pricing">rate card</a> and the <a href="/guide">pricing guide</a> list every rate and the formula without it.</p>
+      <p class="callout">The interactive estimate needs JavaScript. The <a href="/pricing/">rate card</a> and the <a href="/guide/">pricing guide</a> list every rate and the formula without it.</p>
     </noscript>
     <div class="calc-layout">
       <form id="calc-form" class="panel panel-pad">
@@ -247,13 +247,13 @@
     <p><strong>Cache</strong> is the share of input tokens served from a stored prefix. Cache reads are cheaper. The first time a prefix is written, providers bill a separate cache-write fee that this estimate leaves out, because it depends on how often the prefix changes.</p>
     <p><strong>Batch</strong> applies a published 50% discount for OpenAI, Anthropic, and Google. xAI does not publish a batch discount, so those rows stay on the standard rate. DeepSeek uses peak and off-peak hours instead. The calculator prices DeepSeek at the peak rate, and off-peak is half of that.</p>
     <p><strong>Long context</strong> matters when a provider reprices the whole request past a threshold. OpenAI does that above 272,000 input tokens. Gemini 3.1 Pro and the Grok models do it at 200,000. Claude's current models on this card keep one rate across the window.</p>
-    <p>The full table, with sources, is on the <a href="/pricing">rate card</a>. The reasoning behind each assumption is in the <a href="/methodology">methodology</a>.</p>
+    <p>The full table, with sources, is on the <a href="/pricing/">rate card</a>. The reasoning behind each assumption is in the <a href="/methodology/">methodology</a>.</p>
   </section>
 
   <div class="cards">
-    <a class="card" href="/pricing"><span>Reference</span><strong>September rate card</strong><p>Input, cached input, output, and batch rates for all 15 models.</p></a>
-    <a class="card" href="/guide"><span>Explainer</span><strong>How API pricing works</strong><p>Tokens, caching, batch windows, long context, and thinking tokens.</p></a>
-    <a class="card" href="/methodology"><span>Method</span><strong>What the math includes</strong><p>The formula, the exclusions, and how a correction gets in.</p></a>
+    <a class="card" href="/pricing/"><span>Reference</span><strong>September rate card</strong><p>Input, cached input, output, and batch rates for all 15 models.</p></a>
+    <a class="card" href="/guide/"><span>Explainer</span><strong>How API pricing works</strong><p>Tokens, caching, batch windows, long context, and thinking tokens.</p></a>
+    <a class="card" href="/methodology/"><span>Method</span><strong>What the math includes</strong><p>The formula, the exclusions, and how a correction gets in.</p></a>
   </div>
 
   <section class="prose" aria-labelledby="faq-title">
@@ -268,11 +268,11 @@
     </details>
     <details class="faq">
       <summary>How do you calculate a monthly bill by hand?</summary>
-      <p>Divide fresh input tokens by one million and multiply by the input rate. Do the same for cached input at the cache-read rate, and for output at the output rate. Add the three. The <a href="/guide">guide</a> walks through a full example, and the <a href="/methodology">methodology</a> writes the formula without the interface around it.</p>
+      <p>Divide fresh input tokens by one million and multiply by the input rate. Do the same for cached input at the cache-read rate, and for output at the output rate. Add the three. The <a href="/guide/">guide</a> walks through a full example, and the <a href="/methodology/">methodology</a> writes the formula without the interface around it.</p>
     </details>
     <details class="faq">
       <summary>Does this page store what I type?</summary>
-      <p>The estimate runs in your browser. The page puts the workload in the address bar so a link can be bookmarked or shared. Those figures describe a volume of tokens, not a person. There is no account. Details are in the <a href="/privacy">privacy policy</a>.</p>
+      <p>The estimate runs in your browser. The page puts the workload in the address bar so a link can be bookmarked or shared. Those figures describe a volume of tokens, not a person. There is no account. Details are in the <a href="/privacy/">privacy policy</a>.</p>
     </details>
     <details class="faq">
       <summary>Why can the invoice be higher?</summary>
@@ -295,18 +295,18 @@
     <div>
       <p class="footer-label">Read</p>
       <div class="footer-links">
-        <a href="/pricing">Rate card</a>
-        <a href="/guide">Pricing guide</a>
-        <a href="/methodology">Methodology</a>
-        <a href="/about">About</a>
+        <a href="/pricing/">Rate card</a>
+        <a href="/guide/">Pricing guide</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a>
       </div>
     </div>
     <div>
       <p class="footer-label">Site</p>
       <div class="footer-links">
-        <a href="/contact">Contact</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
       </div>
     </div>
   </div>

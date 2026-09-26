@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How AI API Pricing Works — Tokens, Cache, Batch, Long Context</title>
 <meta name="description" content="A plain explanation of input tokens, output tokens, prompt caching, batch discounts, long-context premiums, and thinking tokens, with a worked monthly example.">
-<link rel="canonical" href="https://aicostcalculator.dev/guide">
+<link rel="canonical" href="https://aicostcalculator.dev/guide/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="AI Cost Calculator">
 <meta name="theme-color" content="#1c1915">
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="AI Cost Calculator">
 <meta property="og:title" content="How AI API pricing works">
 <meta property="og:description" content="Tokens, caching, batch windows, long context, and a worked monthly bill.">
-<meta property="og:url" content="https://aicostcalculator.dev/guide">
+<meta property="og:url" content="https://aicostcalculator.dev/guide/">
 <meta property="og:image" content="https://aicostcalculator.dev/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -37,7 +37,7 @@
   "datePublished": "2026-09-26",
   "author": { "@type": "Organization", "name": "AI Cost Calculator", "url": "https://aicostcalculator.dev/" },
   "publisher": { "@type": "Organization", "name": "AI Cost Calculator", "url": "https://aicostcalculator.dev/", "logo": { "@type": "ImageObject", "url": "https://aicostcalculator.dev/apple-touch-icon.png" } },
-  "mainEntityOfPage": "https://aicostcalculator.dev/guide",
+  "mainEntityOfPage": "https://aicostcalculator.dev/guide/",
   "description": "How providers bill input tokens, output tokens, cache reads, batch jobs, and long-context requests."
 }
 </script>
@@ -49,10 +49,10 @@
     <a class="brand" href="/">AI Cost Calculator</a>
     <nav class="nav" aria-label="Primary">
       <a href="/">Calculator</a>
-      <a href="/pricing">Rate card</a>
-      <a href="/guide" aria-current="page">Guide</a>
-      <a href="/methodology">Methodology</a>
-      <a href="/about">About</a>
+      <a href="/pricing/">Rate card</a>
+      <a href="/guide/" aria-current="page">Guide</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/about/">About</a>
     </nav>
   </div>
 </header>
@@ -60,7 +60,7 @@
   <p class="crumbs"><a href="/">Home</a> / Guide</p>
   <p class="eyebrow">A field guide for the bill</p>
   <h1 class="page-title">How AI API pricing works.</h1>
-  <p>Providers bill by the token. A token is a slice of text, often shorter than a word in English and longer than a word in some other languages. The price of a request is the price of the tokens you send plus the price of the tokens the model writes back. This page is the vocabulary the <a href="/">calculator</a> assumes. The numbers it uses are on the <a href="/pricing">rate card</a>.</p>
+  <p>Providers bill by the token. A token is a slice of text, often shorter than a word in English and longer than a word in some other languages. The price of a request is the price of the tokens you send plus the price of the tokens the model writes back. This page is the vocabulary the <a href="/">calculator</a> assumes. The numbers it uses are on the <a href="/pricing/">rate card</a>.</p>
 
   <h2>Input and output are different products</h2>
   <p>Input tokens are the prompt: instructions, the user message, retrieved passages, and prior turns you choose to resend. Output tokens are what the model generates. Reading is cheaper than writing on every model in the card. GPT-6 Sol charges $2 to read a million tokens and $10 to write a million. Claude Opus 5.5 charges $4 and $20. Grok 4.3 is closer, at $1.25 and $2.50, which is why a writing-heavy workload can reorder the ranking even when input prices look similar.</p>
@@ -96,7 +96,7 @@
     <li>Retries, validator loops, and agent steps that multiply one user action into many requests.</li>
     <li>Priority or fast modes, which OpenAI prices at twice the applicable rate.</li>
   </ul>
-  <p>Treat the calculator as the token floor. Add the extras from the provider's own page before you commit a budget. If a rate on this site has drifted, the <a href="/contact">contact page</a> is the correction path, and the <a href="/methodology">methodology</a> records what the formula includes.</p>
+  <p>Treat the calculator as the token floor. Add the extras from the provider's own page before you commit a budget. If a rate on this site has drifted, the <a href="/contact/">contact page</a> is the correction path, and the <a href="/methodology/">methodology</a> records what the formula includes.</p>
 </main>
 <footer class="site-footer">
   <div class="wrap footer-grid">
@@ -107,18 +107,18 @@
     <div>
       <p class="footer-label">Read</p>
       <div class="footer-links">
-        <a href="/pricing">Rate card</a>
-        <a href="/guide">Pricing guide</a>
-        <a href="/methodology">Methodology</a>
-        <a href="/about">About</a>
+        <a href="/pricing/">Rate card</a>
+        <a href="/guide/">Pricing guide</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a>
       </div>
     </div>
     <div>
       <p class="footer-label">Site</p>
       <div class="footer-links">
-        <a href="/contact">Contact</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
       </div>
     </div>
   </div>
