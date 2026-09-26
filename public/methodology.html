@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — How the AI API Cost Calculator Estimates a Bill</title>
+<meta name="description" content="The formula, rate sources, batch and cache rules, and exclusions used by the AI Cost Calculator. Prices checked 26 September 2026.">
+<link rel="canonical" href="https://aicostcalculator.dev/methodology">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="AI Cost Calculator">
+<meta name="theme-color" content="#1c1915">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Cost Calculator">
+<meta property="og:title" content="Calculator methodology">
+<meta property="og:description" content="How monthly API estimates are calculated, and what they leave out.">
+<meta property="og:url" content="https://aicostcalculator.dev/methodology">
+<meta property="og:image" content="https://aicostcalculator.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculator methodology">
+<meta name="twitter:description" content="The formula and the exclusions behind each monthly estimate.">
+<meta name="twitter:image" content="https://aicostcalculator.dev/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How the AI API cost calculator estimates a bill",
+  "dateModified": "2026-09-26",
+  "datePublished": "2026-09-26",
+  "author": { "@type": "Organization", "name": "AI Cost Calculator", "url": "https://aicostcalculator.dev/" },
+  "publisher": { "@type": "Organization", "name": "AI Cost Calculator", "url": "https://aicostcalculator.dev/", "logo": { "@type": "ImageObject", "url": "https://aicostcalculator.dev/apple-touch-icon.png" } },
+  "mainEntityOfPage": "https://aicostcalculator.dev/methodology"
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">AI Cost Calculator</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Calculator</a>
+      <a href="/pricing">Rate card</a>
+      <a href="/guide">Guide</a>
+      <a href="/methodology" aria-current="page">Methodology</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+<main id="content" class="wrap prose">
+  <p class="crumbs"><a href="/">Home</a> / Methodology</p>
+  <p class="eyebrow">Updated <time datetime="2026-09-26">26 September 2026</time></p>
+  <h1 class="page-title">How an estimate is built.</h1>
+  <p>The calculator applies published list prices to a workload you describe. It does not call a provider, sample a model, or forecast quality. Two models with the same monthly figure can still be the wrong pair for a product. This page is only the billing math.</p>
+
+  <h2>Formula</h2>
+  <p class="formula">input tokens = requests × input tokens per request<br>output tokens = requests × output tokens per request<br>cached tokens = input tokens × cache share<br>fresh tokens = input tokens − cached tokens<br>cost = fresh / 1,000,000 × input rate<br>&nbsp;&nbsp;&nbsp;&nbsp; + cached / 1,000,000 × cache-read rate<br>&nbsp;&nbsp;&nbsp;&nbsp; + output / 1,000,000 × output rate</p>
+  <p>The year figure is the month times twelve. It assumes the same volume every month. Per request is the month divided by the request count.</p>
+  <p>Rates are chosen in this order. Start with the model's short-context price. If you turn on long context and that model publishes a higher tier, replace the three rates with the long-context rates. If you choose batch and the provider publishes a 50% batch price, halve the rates in use. Cache share then splits input between the input rate and the cache-read rate.</p>
+
+  <h2>What is included</h2>
+  <ul>
+    <li>Standard text input, cache reads, and text output for the 15 models on the <a href="/pricing">rate card</a>.</li>
+    <li>A 50% batch factor for OpenAI, Anthropic, and Google, matching their published batch columns.</li>
+    <li>Long-context replacement rates for GPT-6, Gemini 3.1 Pro, and the three Grok rows.</li>
+    <li>DeepSeek at the published peak rate. Off-peak is half, and the interface says so.</li>
+  </ul>
+
+  <h2>What is excluded</h2>
+  <ul>
+    <li>Cache writes. They are real, and they are billed once per stored prefix, so a monthly volume model cannot see them from a single slider.</li>
+    <li>Tool, search, and retrieval fees charged per call.</li>
+    <li>Image, audio, and video token prices. Gemini Flash-Lite in the table is the text, image, and video input rate.</li>
+    <li>Regional and data-residency uplifts, priority or fast mode, and provisioned throughput.</li>
+    <li>Taxes, committed-spend discounts, and free-tier quotas.</li>
+    <li>Retries and extra agent steps you did not put in the request count.</li>
+  </ul>
+
+  <h2>Rounding and display</h2>
+  <p>The calculation uses the full rate, then the screen rounds money for reading. Amounts of at least one dollar show two decimal places. Amounts under one cent can show up to six. The copied estimate uses the same rounding as the screen. Ranking uses the unrounded total, so two models that display as the same dollar can still have a stable order.</p>
+
+  <h2>How rates are chosen</h2>
+  <p>A model stays on the card when its price is on the provider's own pricing page or launch note, and when it is a current way to buy that tier. Superseded rows such as GPT-4o and Claude Opus 5 are described in prose on the rate card and left out of the estimator, so a default selection cannot quietly use a retired price. Gemini 3.1 Pro remains because Google still publishes a paid rate for the preview model, and the row is labeled preview.</p>
+  <p>Cache-read prices for Claude Haiku 4.5, Sonnet 5, and Fable 5.1 follow Anthropic's published rule: 10% of the input price, and 2.5% for Fable 5.1. Opus 5.5 uses the explicit cache-read price on its launch page, $0.20, which is tighter than 10% of $4. Where a page gives an explicit number, the explicit number wins.</p>
+
+  <h2>Corrections</h2>
+  <p>List prices move. The check date on each page is the date the source pages were read for that revision, not a promise that a provider has stood still since. If a figure here disagrees with the provider page, the provider page is the one to budget from. Send the model name, the figure, and the source link through the <a href="/contact">contact page</a> and the card will be updated.</p>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <strong>AI Cost Calculator</strong>
+      <p>Independent estimates of large language model API spend. Prices checked 26 September 2026 against provider documentation.</p>
+    </div>
+    <div>
+      <p class="footer-label">Read</p>
+      <div class="footer-links">
+        <a href="/pricing">Rate card</a>
+        <a href="/guide">Pricing guide</a>
+        <a href="/methodology">Methodology</a>
+        <a href="/about">About</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-label">Site</p>
+      <div class="footer-links">
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="legal">Estimates only. Confirm the rate on the provider's pricing page before you budget. © 2026 AI Cost Calculator.</p></div>
+</footer>
+</body>
+</html>
